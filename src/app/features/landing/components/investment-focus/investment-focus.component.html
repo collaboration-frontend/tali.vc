@@ -10,16 +10,18 @@
     </div>
     <div class="col-span-12 lg:col-span-7">
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
-        <div *ngFor="let area of focusAreas" (mouseenter)="selectArea(area)" class="p-4 lg:p-5 border border-natural-1000 cursor-pointer bg-white flex flex-col items-start gap-4 justify-center text-center min-h-[100px] lg:min-h-[120px]
-                   hover:bg-primary hover:text-white group transition-colors duration-1000"
-             [ngClass]="{ 'bg-primary text-white': selectedArea?.labelKey === area.labelKey }">
-          <img [src]="area.icon || 'assets/icons/FinTech-icon.svg'" [attr.alt]="area.alt"
-            class="w-8 h-8 lg:w-10 lg:h-10 mb-3 transition-colors duration-1000 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
-            [ngClass]="{ 'filter invert brightness-0 contrast-200': selectedArea?.labelKey === area.labelKey }">
-          <span
-            class="text-primary-100 text-xs lg:text-base font-light transition-colors duration-1000 group-hover:text-white"
-            [ngClass]="{ 'text-white': selectedArea?.labelKey === area.labelKey }">{{ area.labelKey | translate }}</span>
-        </div>
+        @for (area of focusAreas; track area.id) {
+          <div (mouseenter)="selectArea(area)" class="p-4 lg:p-5 border border-natural-1000 cursor-pointer bg-white flex flex-col items-start gap-4 justify-center text-center min-h-[100px] lg:min-h-[120px]
+                     hover:bg-primary hover:text-white group transition-colors duration-1000"
+               [ngClass]="{ 'bg-primary text-white': selectedArea?.id === area.id }">
+            <img [src]="area.icon || 'assets/icons/FinTech-icon.svg'" [attr.alt]="area.alt"
+              class="w-8 h-8 lg:w-10 lg:h-10 mb-3 transition-colors duration-1000 group-hover:filter group-hover:invert group-hover:brightness-0 group-hover:contrast-200"
+            >
+            <span
+              class="text-primary-100 text-xs lg:text-base font-light transition-colors duration-1000 group-hover:text-white"
+              [ngClass]="{ 'text-white': selectedArea?.id === area.id }">{{ area.labelKey | translate }}</span>
+          </div>
+        }
       </div>
     </div>
     <div class="col-span-12 lg:col-span-5">
