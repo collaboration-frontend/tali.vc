@@ -4,14 +4,19 @@
       <div class="flex-shrink-0">
         <img class="w-32 lg:w-52" src="assets/images/icons/logo.png" alt="Logo">
       </div>
- 
+
       <div class="hidden lg:flex items-center gap-8 mx-auto justify-center flex-1">
-        <a href="#home" class="py-4 hover:text-white text-white/50 transition active-menu outline-none">{{ 'header.nav.home' | translate }}</a>
-        <a href="#about" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.about' | translate }}</a>
-        <a href="#portfolio" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.portfolio' | translate }}</a>
-        <!-- <a href="#team" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.team' | translate }}</a> -->
-        <a href="#news" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.news' | translate }}</a>
-        <a href="#contact" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.contact' | translate }}</a>
+        <a href="#home" class="py-4 hover:text-white text-white/50 transition active-menu outline-none"
+          (click)="scrollToSection('home', $event)">{{ 'header.nav.home' | translate }}</a>
+        <a href="#about" class="py-4 hover:text-white text-white/50 transition outline-none"
+          (click)="scrollToSection('about', $event)">{{ 'header.nav.about' | translate }}</a>
+        <a href="#portfolio" class="py-4 hover:text-white text-white/50 transition outline-none"
+          (click)="scrollToSection('portfolio', $event)">{{ 'header.nav.portfolio' | translate }}</a>
+        <!-- <a href="#team" class="py-4 hover:text-white text-white/50 transition outline-none" (click)="scrollToSection('team', $event)">{{ 'header.nav.team' | translate }}</a> -->
+        <a href="#news" class="py-4 hover:text-white text-white/50 transition outline-none"
+          (click)="scrollToSection('news', $event)">{{ 'header.nav.news' | translate }}</a>
+        <a href="#contact" class="py-4 hover:text-white text-white/50 transition outline-none"
+          (click)="scrollToSection('contact', $event)">{{ 'header.nav.contact' | translate }}</a>
       </div>
 
       <!-- Right side controls -->
@@ -64,31 +69,29 @@
     [class.max-h-0]="!isMobileMenuOpen">
     <div class="px-2 pt-2 pb-3 space-y-1 bg-primary-100/95  mt-4  border-white/10 ">
       <a href="#home" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
-        (click)="scrollToSection('home'); closeMobileMenu()">
+        (click)="scrollToSection('home', $event)">
         {{ 'header.nav.home' | translate }}
       </a>
       <a href="#about" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
-        (click)="scrollToSection('about'); closeMobileMenu()">
+        (click)="scrollToSection('about', $event)">
         {{ 'header.nav.about' | translate }}
       </a>
       <a href="#portfolio" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
-        (click)="scrollToSection('portfolio'); closeMobileMenu()">
+        (click)="scrollToSection('portfolio', $event)">
         {{ 'header.nav.portfolio' | translate }}
       </a>
       <a href="#team" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
-        (click)="scrollToSection('team'); closeMobileMenu()">
+        (click)="scrollToSection('team', $event)">
         {{ 'header.nav.team' | translate }}
       </a>
       <a href="#news" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
-        (click)="scrollToSection('news'); closeMobileMenu()">
+        (click)="scrollToSection('news', $event)">
         {{ 'header.nav.news' | translate }}
       </a>
       <a href="#contact" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
-        (click)="scrollToSection('contact'); closeMobileMenu()">
+        (click)="scrollToSection('contact', $event)">
         {{ 'header.nav.contact' | translate }}
-      </a>
-
-      <!-- Mobile controls -->
+      </a> <!-- Mobile controls -->
       <div class="border-t border-white/10 pt-3 mt-3">
         <div class="flex items-center justify-between px-3 py-2">
           <div class="relative">
