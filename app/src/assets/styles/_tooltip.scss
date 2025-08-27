@@ -1,0 +1,12 @@
+.mat-mdc-tooltip {
+  --mdc-plain-tooltip-container-color: #fff;
+  --mdc-plain-tooltip-supporting-text-font: "Baloo 2", sans-serif;
+  --mdc-plain-tooltip-supporting-text-size: 14px;
+  --mdc-plain-tooltip-supporting-text-weight: 100;
+  --mdc-plain-tooltip-supporting-text-color: #000;
+ }
+
+ .mdc-tooltip__surface {
+   letter-spacing: -0.5px!important;
+   border: 1px solid #333!important;
+ }

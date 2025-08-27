@@ -1,0 +1,72 @@
+.card {
+    padding: $font-size-2xl;
+    border-radius: 10px;
+    background: #fff;
+    .title {
+      color: $text-dark;
+      font-size: 16px;
+      font-weight: $font-normal;
+    }
+    .truncated {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .price {
+      color: $color-primary;
+      font-size: 24px;
+      font-weight: $font-normal;
+    }
+    .sub-title {
+      color: $dark-gray;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: -0.3px;
+    }
+    .text-percent {
+      font-size: $font-size-sm;
+      font-weight: $font-default;
+      letter-spacing: -0.42px;
+    }
+    .percent-success {
+      color: $status-success;
+    }
+    .percent-warn {
+      color: $primary-color;
+    }
+    
+  }
+  .card-border-left-success{
+    border-radius: 10px;
+  border-left: 4px solid #00C48C;
+  background: #FFF;
+  }
+  .card-border-left-primary{
+    border-radius: 10px;
+  border-left: 4px solid #A54EE1;
+  background: #FFF;
+  }
+  .card-border-left-osis{
+    border-radius: 10px;
+  border-left: 4px solid #1BCED8;
+  background: #FFF;
+  }
+  .card-border-left-coral{
+    border-radius: 10px;
+  border-left: 4px solid #FF375E;
+  background: #FFF;
+  }
+  .card-border-left-orange{
+    border-radius: 10px;
+  border-left: 4px solid #FF6A39;
+  background: #FFF;
+  }
+  .card-border-left-yalow{
+    border-radius: 10px;
+  border-left: 4px solid #FFDD40;
+  background: #FFF;
+  }

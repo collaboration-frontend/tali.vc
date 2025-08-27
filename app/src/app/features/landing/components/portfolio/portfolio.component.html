@@ -1,0 +1,19 @@
+<section id="portfolio" class="container py-10">
+  <div class="grid grid-cols-12 gap-4">
+    <div class="col-span-12">
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex flex-col gap-4">
+          <span class="md:text-4xl text-2xl font-medium text-extended-black">{{ 'portfolio.title' | translate }}</span>
+          <p class="text-extended-grey text-base font-normal">{{ 'portfolio.subtitle' | translate }}</p>
+        </div>
+        <!-- <a class="text-primary-100 text-sm font-medium" href="#">
+            Display All
+          </a> -->
+      </div>
+    </div>
+    <app-portfolio-item-card 
+      *ngFor="let item of portfolioItems" 
+      [item]="item"
+      class="col-span-12 lg:col-span-4" />
+  </div>
+</section>

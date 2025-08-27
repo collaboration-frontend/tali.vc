@@ -1,0 +1,83 @@
+
+mat-dialog-container {
+    .mdc-dialog__surface {
+        border-radius: 12px !important;
+    }
+    .mat-mdc-dialog-inner-container {
+        .mat-mdc-dialog-surface {
+            lib-muk-modal {
+                .sticky-btn lib-muk-dynamic-buttons lib-muk-list-looping > div {
+                    @media (max-width: 768px) {
+                        flex-direction: row;
+                      }
+                }
+                .main-dynamic-form {
+                    padding: $font-size-2xl !important;
+                    @media (max-width: 768px) {
+                        padding: 16px !important;
+
+                      }
+                }
+                .modal-container {
+                   .modal-header.header-bg {
+                    padding: $font-size-2xl !important;
+                    background: #F8F8F8 !important;
+                    @media (max-width: 768px) {
+                        padding: $font-size-base !important;
+                      }
+                   }
+                   .mat-mdc-dialog-content {
+                    max-height: $percent-100 !important;
+                   }
+                   @for $i from 0 through 100 {
+                    #mat-mdc-dialog-title-#{$i} {
+                        .modal-title {
+                            color: #1D252D !important;
+                            font-size: 22px !important;
+                            font-weight: $font-default !important;
+                            @media (max-width: 768px) {
+                                font-size: 18px !important;
+                              }
+                        }
+                        .modal-close-icon {
+                            color:#1D252D !important;
+                            .mat-icon {
+                                font-size: 16px !important;
+                                font-weight: 700 !important;
+                            }
+                        }
+                    }
+                  }
+ 
+                    mat-dialog-content {
+                        .modal-content {
+                            padding: 0px !important;
+                        }
+                    }
+
+                }
+                lib-muk-dynamic-buttons {
+                    width: 70% !important;
+                    @media (max-width: 768px) {
+                        width: $percent-100 !important;
+                      }
+                }
+            }
+        }
+    }
+}
+
+
+ app-add-new-user {
+    .sticky-form {
+        padding: 0px !important;
+    }
+ }
+
+ .stc-btns {
+    padding: 0 !important;
+    padding-inline: $font-size-2xl !important;
+    padding-bottom: 12px !important;
+    padding-top: 16px !important;
+
+ }

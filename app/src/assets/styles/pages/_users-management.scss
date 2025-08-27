@@ -1,0 +1,33 @@
+.grid-layout {
+    @apply grid grid-cols-12 items-center mb-8;
+  }
+  
+  .title-section {
+    @apply col-span-12 md:col-span-8;
+  }
+  
+  .button-section {
+    @apply col-span-12 md:col-span-4 justify-self-end w-full;
+  }
+  
+  .card-grid {
+    @apply grid grid-cols-12 gap-4 items-center mb-8;
+  }
+  
+  .card-item {
+    @apply col-span-12 md:col-span-4 lg:col-span-2;
+  }
+  
+
+  .section-wrapper {
+    @apply bg-white pt-1 pb-4 px-4 rounded-xl relative;
+  }
+  
+  .table-actions {
+    @apply w-full my-3;
+  }
+  
+ app-process-action-list .section-wrapper{
+    overflow: hidden !important;
+
+  } 

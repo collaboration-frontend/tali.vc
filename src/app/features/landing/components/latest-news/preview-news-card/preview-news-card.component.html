@@ -1,0 +1,48 @@
+<div class="group grid grid-cols-12 border border-natural-1000 transition-all cursor-pointer duration-500 ease-in-out h-auto hover:h-[200px] hover:bg-primary-100 px-4 py-2 overflow-hidden">
+
+  <!-- Image Section -->
+  <div class="col-span-4 lg:col-span-3 self-center relative overflow-hidden me-4">
+    <img [src]="news?.imageUrl" alt="preview-image"
+      class="w-full h-full object-cover transform transition-all duration-500 ease-in-out group-hover:scale-110 group-hover:rotate-1">
+    <!-- Hover overlay effect -->
+    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 ease-in-out"></div>
+  </div>
+  
+  <!-- Content Section -->
+  <div class="col-span-8 lg:col-span-9 flex flex-col justify-between h-full">
+
+    <!-- Title -->
+    <div class="mb-3">
+      <h3
+        class="text-base lg:text-xl font-medium text-extended-black group-hover:text-white transition-colors duration-300 line-clamp-1 group-hover:line-clamp-3 leading-tight">
+        {{news?.title}}
+      </h3>
+    </div>
+
+    <!-- Description -->
+    <div class="flex-grow mb-4">
+      <p class="description-text group-hover:text-white">
+        {{news?.description}}
+      </p>
+    </div>
+
+    <!-- Date Section -->
+    <div class="flex items-center transition-colors duration-300">
+      <div class="flex items-center justify-center w-8 h-8 transition-all duration-300 group-hover:scale-110 mr-3">
+        <img src="assets/images/news/CalendarBlank.svg" alt="Calendar"
+          class="w-4 h-4 transition-all duration-300">
+      </div>
+      <div class="flex items-center justify-between w-full">
+        <div class="text-sm lg:text-base font-medium text-grey-200 group-hover:text-white transition-colors duration-300">
+          1 Feb, 2020
+        </div>
+        <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span class="text-white text-sm font-medium"> View News</span>
+          <img src="assets/icons/arrow-right.svg" alt="arrow-right" class="filter brightness-0 invert">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'mixins';
+
+.skeleton-loader {
+  @include flex-start;
+  flex-direction: column;
+  gap: $spacing-lg;
+  max-width: $percent-100;
+  padding: $spacing-lg;
+  box-shadow: 0 4px 8px rgba($text-dark, 0.1);
+  border-radius: $border-radius-md;
+  background-color: $white;
+}
+
+.skeleton-body {
+  @include flex-start;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.skeleton-line {
+  height: $spacing-lg;
+  @include skeleton-base;
+  @include skeleton-animation;
+  border-radius: $border-radius-sm;
+
+  &.short {
+    width: 70%;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .skeleton-line {
+    height: $spacing-md;
+  }
+
+  .skeleton-line.short {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-loader {
+    padding: $spacing-md;
+  }
+
+  .skeleton-line {
+    height: $spacing-sm;
+  }
+
+  .skeleton-line.short {
+    width: 90%;
+  }
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,148 @@
+<nav class="fixed w-full z-50 bg-primary-100 p-[11px]">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      <div class="flex-shrink-0">
+        <img class="w-32 lg:w-52" src="assets/images/icons/logo.png" alt="Logo">
+      </div>
+
+      <div class="hidden lg:flex items-center space-x-8 mx-auto justify-center flex-1">
+        <a href="#home" class="py-4 hover:text-white text-white/50 transition active-menu outline-none">Home</a>
+        <a href="#about" class="py-4 hover:text-white text-white/50 transition outline-none ">About</a>
+        <a href="#portfolio" class="py-4 hover:text-white text-white/50 transition outline-none ">Portfolio</a>
+        <!-- <a href="#team" class="py-4 hover:text-white text-white/50 transition outline-none ">Team</a> -->
+        <a href="#news" class="py-4 hover:text-white text-white/50 transition outline-none ">News </a>
+        <a href="#contact" class="py-4 hover:text-white text-white/50 transition outline-none ">Contact
+          Us</a>
+      </div>
+
+      <!-- Right side controls -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <!-- Language Selector -->
+        <div class="relative">
+          <button (click)="toggleLanguageDropdown()"
+            class="flex items-center space-x-1 hover:text-white transition-colors cursor-pointer gap-2"
+            [attr.aria-expanded]="isLanguageDropdownOpen" aria-label="Select language">
+            <img src="assets/icons/Global.svg" alt="Global" class="mb-1">
+            <span class="text-white/50 text-sm">{{ selectedLanguage.code.toUpperCase() }}</span>
+            <img src="assets/icons/arrow-bottom.svg" alt="arrow-down"
+              class="mt-[-2px] transition-transform duration-200" [class.rotate-180]="isLanguageDropdownOpen">
+          </button>
+
+          <!-- Language Dropdown Menu -->
+          <div *ngIf="isLanguageDropdownOpen"
+            class="language-dropdown absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+            <div *ngFor="let language of languages"
+              class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
+              [class.bg-gray-50]="selectedLanguage.code === language.code">
+              <span class="text-gray-700">{{ language.name }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Apply Button -->
+        <!-- <button
+          class="bg-primary-500 text-white px-6 py-2 flex items-center transition-colors duration-700 hover:bg-[red]">
+          <span class="text-sm">Apply</span>
+          <img src="assets/icons/arrow-top.svg" alt="arrow-top">
+        </button> -->
+      </div>
+
+      <div class="lg:hidden">
+        <button type="button" class="text-white   p-2 " (click)="toggleMobileMenu()"
+          [attr.aria-expanded]="isMobileMenuOpen" aria-label="Toggle mobile menu" aria-controls="mobile-menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" [class.hidden]="isMobileMenuOpen">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" [class.hidden]="!isMobileMenuOpen">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden overflow-hidden " [class.max-h-[400px]]="isMobileMenuOpen"
+    [class.max-h-0]="!isMobileMenuOpen">
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-primary-100/95  mt-4  border-white/10 ">
+      <a href="#home" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
+        (click)="scrollToSection('home'); closeMobileMenu()">
+        Home
+      </a>
+      <a href="#about" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
+        (click)="scrollToSection('about'); closeMobileMenu()">
+        About
+      </a>
+      <a href="#portfolio" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
+        (click)="scrollToSection('portfolio'); closeMobileMenu()">
+        Portfolio
+      </a>
+      <a href="#team" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
+        (click)="scrollToSection('team'); closeMobileMenu()">
+        Team
+      </a>
+      <a href="#news" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
+        (click)="scrollToSection('news'); closeMobileMenu()">
+        News & Reports
+      </a>
+      <a href="#contact" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
+        (click)="scrollToSection('contact'); closeMobileMenu()">
+        Contact Us
+      </a>
+
+      <!-- Mobile controls -->
+      <div class="border-t border-white/10 pt-3 mt-3">
+        <div class="flex items-center justify-between px-3 py-2">
+          <div class="relative">
+            <button (click)="toggleLanguageDropdown()"
+              class="flex items-center space-x-2 hover:text-white transition-colors cursor-pointer"
+              [attr.aria-expanded]="isLanguageDropdownOpen" aria-label="Select language">
+              <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+              <span class="text-white/70">{{ selectedLanguage.code.toUpperCase() }}</span>
+            </button>
+
+            <!-- Mobile Language Dropdown Menu -->
+            <div *ngIf="isLanguageDropdownOpen"
+              class="language-dropdown absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+              <div *ngFor="let language of languages"
+                class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
+                [class.bg-gray-50]="selectedLanguage.code === language.code">
+                <span class="text-lg">{{ language.flag }}</span>
+                <span class="text-gray-700">{{ language.name }}</span>
+                <span class="text-gray-500 text-sm">{{ language.code.toUpperCase() }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button class="p-2 text-white/70">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </button>
+            <button class="p-2 text-white/70">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="px-3 py-2">
+          <button
+            class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center space-x-2">
+            <span>Apply</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,40 @@
+.active-menu {
+  // color: white;
+  // border-top: 2px solid white;
+}
+
+// Hover effect for navigation links
+nav a:hover {
+  // color: white;
+  // border-top: 2px solid white;
+}
+
+// Language dropdown styles
+.language-dropdown {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// Language option hover effect
+.language-option {
+  transition: all 0.2s ease;
+
+}
+
+// Arrow rotation animation
+.arrow-rotate {
+  transition: transform 0.2s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}

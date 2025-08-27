@@ -1,0 +1,133 @@
+ $color-subtitle: #666666;
+ $color-title: #333333;
+ $color-danger: #ff0000;
+ $sidebar-bg-color: #2b014a;
+ $white: #fff;
+ $white2: #D7D8DA;
+ $white3: #F8F8F8;
+ $nav-item-color: #ccc;
+ $hover-bg-color: #6C00BF;
+ $color-subtitle: #7E8299;
+ $color-title: #1A252D;
+ $color-danger: #F1416C;
+ $color-coral: #FF375E;
+ $color-gray: #73799B;
+ $border-gray: #D7D7D7;
+ $color-darkgray: #626262;
+ $color-lightgray: #D0D0D0;
+ $color-primary: #7711c6;
+ $gray-bg-color: #f1f1f2;
+ $gray-light-bg-color: #E4E4E4;
+ $gray-icon-color: #73799b;
+ $gray-line-separator: #8E9AA03D;
+ $status-bg-success: rgba(140, 255, 222, 0.3);
+ $status-success: #00c48c;
+ $status-bg-secondary: rgba(115, 121, 155, 0.30);
+ $status-secondary: #73799B;
+ // Font
+ $font-size-default: 13px;
+ $font-size-medium: 22px;
+ $gap-medium: 16px;
+ $font-weight-normal: 500;
+ $font-weight-bold: 600;
+ $line-height-small: 14px;
+ $line-height-medium: 26px;
+ $line-height-large: 18px;
+ $letter-spacing-small: -0.3px;
+ $letter-spacing-medium: -0.48px;
+ $line-height: 14px;
+ // Dimensions
+ $badge-size: 18px;
+ $badge-border-radius: 50px;
+ $badge-offset-top: -4px;
+ $badge-offset-left: 10px;
+ $sidebar-width: 200px;
+ $sm-gap: 8px;
+ $link-padding: 14px;
+ $link-margin-bottom: 24px;
+ $border-radius: 9px;
+ $sidebar-padding: 24px;
+ $sidebar-margin-inline-start: 14px;
+ $nav-margin: 14px 0px;
+ $font-default: 400;
+ $font-normal: 500;
+ $font-semibold: 600;
+ $font-bold: 700;
+ $btn-padding: 7px;
+ $btn-height: 32px;
+ $btn-width: 31px;
+ $btn-border-radius: 6px;
+ $icon-size: 17px;
+ $icon-font-size: 18px;
+ // _variables.scss
+ $primary-color: #ff375e;
+ $dark-gray: #8E9AA0;
+ $light-gray: #F7F7F7;
+ $text-dark: #1d252d;
+ $gap-default: 16px;
+ $btn-radius: 8px;
+ $btn-export: #ebe0f2;
+ $font-size-xs: 12px;
+ $font-size-sm: 14px;
+ $font-size-base: 16px;
+ $font-size-xl: 20px;
+ $font-size-2xl: 24px;
+ $font-size-3xl: 28px;
+
+ $line-height: 24px;
+ $btn-height: 44px;
+ $icon-size: 20px;
+
+ $percent-100: 100%;
+ $percent-50: 50%;
+ $percent-25: 25%;
+ $percent-0: 0%;
+
+ // Status Colors
+ $status-purple: #a54ee1;
+ $status-success: #00c48c;
+ $status-orange: #ff6a39;
+ $status-yellow: #ffdd40;
+ $status-coral: #ff375e;
+
+ // Status Background Colors
+ $status-purple-bg: rgba($status-purple, 0.10);
+ $status-success-bg: rgba($status-success, 0.10);
+ $status-orange-bg: rgba($status-orange, 0.10);
+ $status-coral-bg: rgba($status-coral, 0.15);
+
+ // Card Styles
+ $card-border-radius: 10px;
+ $card-padding: 24px;
+ $card-border-color: #EDEDED;
+ $card-bg-color: #fff;
+
+ // Avatar/Circle Sizes
+ $avatar-sm: 24px;
+ $avatar-md: 28px;
+ $avatar-lg: 40px;
+ $avatar-xl: 48px;
+
+ // Border Radius
+ $border-radius-sm: 6px;
+ $border-radius-md: 8px;
+ $border-radius-lg: 12px;
+
+ // Typography
+ $font-size-xs: 11px;
+ $font-size-sm: 12px;
+ $font-size-base: 14px;
+ $font-size-lg: 16px;
+
+ // Line Heights
+ $line-height-xs: 16px;
+ $line-height-sm: 20px;
+ $line-height-base: 24px;
+ $line-height-lg: 28px;
+
+ // Spacing
+ $spacing-xs: 6px;
+ $spacing-sm: 8px;
+ $spacing-md: 12px;
+ $spacing-lg: 16px;
+ $spacing-xl: 24px;

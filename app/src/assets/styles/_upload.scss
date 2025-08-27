@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'mixins';
+
+lib-muk-file-uploader {
+  margin-block: $spacing-sm !important;
+  display: block;
+
+  label {
+    @include text-style($font-size-base, $font-normal, $text-dark);
+    margin-bottom: $spacing-sm !important;
+    display: block !important;
+
+    .required-field {
+      @include text-style($font-size-base, $font-normal, $color-coral);
+    }
+  }
+
+  .upload-file-input {
+    min-height: 156px;
+
+    .stc-title__uploader,
+    .stc-choose_uploader {
+      @include text-style($font-size-sm, $font-normal, $text-dark);
+    }
+
+    .stc-size {
+      @include text-style($font-size-xs, $font-default, $dark-gray);
+    }
+  }
+
+  .stc-uploader {
+    position: relative;
+    gap: 0 !important;
+
+    svg {
+      display: none; // Hide the existing SVG
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      @include icon-background(36px, '../icons/upload-state.svg');
+    }
+  }
+
+  .uploader {
+    .stc-row__status {
+      @include flex-start;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+
+}
+
+lib-muk-toggle {
+  .mat-mdc-slide-toggle .mdc-switch:enabled .mdc-switch__track:after {
+    background-color: $color-coral !important;
+  }
+}
+
+.mdc-label {
+  @include text-style($font-size-sm, $font-default, $text-dark, $line-height-base);
+  padding-inline-start: $spacing-sm;
+}

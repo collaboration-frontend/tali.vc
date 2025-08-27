@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'mixins';
+
+lib-muk-pagination {
+  .pagination {
+    background: transparent !important;
+    //  border-top: 1px solid #F3F3F3;
+    margin-top: 0 !important;
+    font-size: $font-size-sm;
+
+    .pagination-list {
+      @include flex-start;
+      padding-top: 1rem !important;
+
+      .pagination-list-item {
+        @include text-style($font-size-sm, $font-default, $dark-gray);
+        opacity: 0.7 !important;
+        margin: 0 !important;
+      }
+
+      .pagination-action {
+        border-radius: $border-radius-md !important;
+        border: 1px solid $border-gray !important;
+        background: $white !important;
+        margin-inline-end: $spacing-sm !important;
+
+        &:first-of-type,
+        &:last-of-type {
+          &::after {
+            @include flex-center;
+            content: url('../icons/arrow-pagination-back.svg');
+            width: $font-size-2xl;
+            height: $font-size-2xl;
+            background-size: contain;
+            background-repeat: no-repeat;
+            line-height: 10px;
+          }
+        }
+
+        &:last-of-type::after {
+          content: url('../icons/arrow-pagination-next.svg');
+        }
+
+        mat-icon {
+          display: none !important;
+        }
+      }
+
+      .active {
+        background: transparent !important;
+        @include text-style($font-size-sm, $font-normal, $text-dark);
+      }
+    }
+
+    .material-icons {
+      @include flex-center;
+      color: $text-dark !important;
+    }
+  }
+}

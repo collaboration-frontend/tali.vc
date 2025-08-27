@@ -1,0 +1,30 @@
+.data-ranger {
+    lib-muk-date-ranger {
+        .muk-date-ranger {
+            mat-form-field {
+                margin: 0px !important;
+
+                .mat-mdc-text-field-wrapper {
+                    background-color: transparent !important;
+                    border: none !important;
+                }
+
+                .mat-mdc-form-field-icon-suffix .mat-datepicker-toggle .mat-datepicker-toggle-default-icon {
+                    display: none;
+                }
+
+                .mat-mdc-form-field-icon-suffix .mat-datepicker-toggle button::after {
+                    content: '';
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url('../icons/arrow-bottom-dropdown.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+            }
+        }
+    }
+}
