@@ -7,13 +7,6 @@ module.exports = {
     container: {
       center: true,
       padding: "1rem",
-            screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-      },
-
     },
     colors: {
       initial: "initial",
@@ -88,6 +81,9 @@ module.exports = {
         grey: "#8E9AA0",
         silver: "#DEE0E2",
         black: "#000000",
+      },
+      secondary: {
+        DEFAULT: "#7711C6"
       },
     },
     extend: {

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { InvestmentFocusItemCardComponent } from './item-card/item-card.component';
 import { InvestmentFocusPreviewItemCardComponent } from './preview-item-card/preview-item-card.component';
 
 @Component({
   selector: 'app-investment-focus',
   standalone: true,
-  imports: [InvestmentFocusItemCardComponent, InvestmentFocusPreviewItemCardComponent],
+  imports: [InvestmentFocusItemCardComponent, InvestmentFocusPreviewItemCardComponent, TranslateModule],
   templateUrl: './investment-focus.component.html',
   styleUrls: ['./investment-focus.component.scss']
 })

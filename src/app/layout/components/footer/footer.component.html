@@ -4,20 +4,20 @@
     <div class="grid grid-cols-3 gap-4 lg:gap-20 mb-8 max-w-md">
       <!-- Column 1 -->
       <div class="space-y-4">
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">Home</a>
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">About</a>
+        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">{{ 'header.nav.home' | translate }}</a>
+        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{ 'header.nav.about' | translate }}</a>
       </div>
 
       <!-- Column 2 -->
       <div class="space-y-4">
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">Portfolio</a>
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">Team</a>
+        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">{{ 'header.nav.portfolio' | translate }}</a>
+        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{ 'header.nav.team' | translate }}</a>
       </div>
 
       <!-- Column 3 -->
       <div class="space-y-4">
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">News</a>
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">Contact Us</a>
+        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">{{ 'header.nav.news' | translate }}</a>
+        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{ 'header.nav.contact' | translate }}</a>
       </div>
     </div>
 
@@ -33,12 +33,12 @@
       </div>
 
       <!-- Right Side - Copyright and Social Media -->
-      <div class="flex flex-col gap-4 md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-6">
         <!-- Copyright -->
-        <span class="text-white text-sm">Copyright stc 2025</span>
+        <span class="text-white text-sm">{{ 'footer.copy' | translate:{ year: currentYear } }}</span>
 
         <!-- Social Media Icons -->
-        <div class="flex space-x-3 flex items-center gap-2">
+        <div class="flex space-x-3">
           <!-- Facebook -->
           <a href="#"
             class="w-8 h-8 bg-white rounded-full flex items-center justify-center border border-purple-900 hover:bg-gray-100 transition-colors">

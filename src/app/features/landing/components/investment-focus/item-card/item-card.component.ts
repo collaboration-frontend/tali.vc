@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-investment-focus-item-card',
@@ -10,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./item-card.component.scss']
 })
 export class InvestmentFocusItemCardComponent {
+  title = input<string>();
 
 }

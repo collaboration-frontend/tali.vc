@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface Language {
   code: string;
@@ -11,7 +12,8 @@ interface Language {
   selector: 'app-header',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
@@ -27,11 +29,17 @@ export class HeaderComponent implements OnInit {
   
   selectedLanguage: Language = this.languages[0];
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private translate: TranslateService) {}
 
   ngOnInit(): void {
     // Close mobile menu on route change or page refresh
     this.closeMobileMenu();
+    const savedLanguageCode = localStorage.getItem('lang') || 'en';
+    const detectedLanguage = this.languages.find(l => l.code === savedLanguageCode) || this.languages[0];
+    this.selectedLanguage = detectedLanguage;
+    this.translate.setDefaultLang('en');
+    this.translate.use(detectedLanguage.code);
+    document.documentElement.dir = detectedLanguage.code === 'ar' ? 'rtl' : 'ltr';
   }
 
   @HostListener('document:click', ['$event'])
@@ -85,6 +93,18 @@ export class HeaderComponent implements OnInit {
 
   closeLanguageDropdown(): void {
     this.isLanguageDropdownOpen = false;
+  }
+
+  selectLanguage(language: Language): void {
+    if (this.selectedLanguage.code === language.code) {
+      this.closeLanguageDropdown();
+      return;
+    }
+    this.selectedLanguage = language;
+    this.translate.use(language.code);
+    localStorage.setItem('lang', language.code);
+    document.documentElement.dir = language.code === 'ar' ? 'rtl' : 'ltr';
+    this.closeLanguageDropdown();
   }
 
 

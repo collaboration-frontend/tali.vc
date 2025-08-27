@@ -15,14 +15,14 @@
     <div class="mb-3">
       <h3
         class="text-base lg:text-xl font-medium text-extended-black group-hover:text-white transition-colors duration-300 line-clamp-1 group-hover:line-clamp-3 leading-tight">
-        {{news?.title}}
+        {{news?.title | translate}}
       </h3>
     </div>
 
     <!-- Description -->
     <div class="flex-grow mb-4">
       <p class="description-text group-hover:text-white">
-        {{news?.description}}
+        {{news?.description | translate}}
       </p>
     </div>
 
@@ -37,7 +37,7 @@
           1 Feb, 2020
         </div>
         <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-sm font-medium"> View News</span>
+          <span class="text-white text-sm font-medium">{{ 'latestNews.viewNews' | translate }}</span>
           <img src="assets/icons/arrow-right.svg" alt="arrow-right" class="filter brightness-0 invert">
         </div>
       </div>

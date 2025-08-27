@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']

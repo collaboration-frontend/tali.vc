@@ -2,14 +2,14 @@
   <div class="latest-news-content">
     <div class="flex justify-between items-center mb-2">
       <h2 class="text-3xl font-medium  tracking-tight text-extended-black">
-        latest news
+        {{ 'latestNews.title' | translate }}
       </h2>
       <!-- <a class="text-primary-100 text-sm font-medium" href="#">
         Display All
       </a> -->
     </div>
     <p class="text-sm text-extended-grey mb-6 max-w-3xl">
-      Lorem ipsum dolor sit amet consectetur. Semper nisi sodales sapien diam ornare pretium.
+      {{ 'latestNews.subtitle' | translate }}
     </p>
     <div class="grid grid-cols-12 gap-4 mt-4">
       <div class="col-span-12 lg:col-span-7">
@@ -20,20 +20,16 @@
               [src]="mainNewsItem?.imageUrl" alt="news-1">
           </div>
           <div class="p-4">
-            <div class="text-2xl font-medium mb-2">{{mainNewsItem?.title}}</div>
+            <div class="text-2xl font-medium mb-2">{{mainNewsItem?.title | translate}}</div>
             <div class="lg:text-base text-sm text-grey-200 mb-2">
-              {{mainNewsItem?.description}}
+              {{mainNewsItem?.description | translate}}
             </div>
 
             <div class="flex items-center justify-between w-full">
-              <div
-                class="text-sm lg:text-base font-medium text-grey-200 group-hover:text-white transition-colors duration-300">
-                1 Feb, 2020
-              </div>
-              <!-- <div class="flex items-center gap-2  duration-300">
-                  <span class="text-primary-100 text-sm font-medium"> View News</span>
-                  <img src="assets/icons/arrow-right.svg" alt="arrow-right">
-                </div> -->
+              <a class="flex items-center gap-2  duration-300" [routerLink]="['/news', mainNewsItem?.id]">
+                <span class="text-primary-100 text-sm font-medium"> {{ 'latestNews.viewNews' | translate }}</span>
+              </a>
+
             </div>
           </div>
         </div>
@@ -60,14 +56,14 @@
             <div class="mb-3">
               <h3
                 class="text-base lg:text-xl font-medium text-extended-black group-hover:text-white transition-colors duration-300 line-clamp-1 group-hover:line-clamp-3 leading-tight">
-                {{item?.title}}
+                {{item?.title | translate}}
               </h3>
             </div>
 
             <!-- Description -->
             <div class="flex-grow mb-4">
               <p class="description-text group-hover:text-white">
-                {{item?.description}}
+                {{item?.description | translate}}
               </p>
             </div>
 
@@ -75,16 +71,10 @@
             <div class="flex items-center transition-colors duration-300">
               <div
                 class="flex items-center justify-center w-8 h-8 transition-all duration-300 group-hover:scale-110 mr-3">
-                <img src="assets/images/news/CalendarBlank.svg" alt="Calendar"
-                  class="w-4 h-4 transition-all duration-300">
+               
               </div>
               <div class="flex items-center justify-between w-full">
-                <div
-                  class="text-sm lg:text-base font-medium text-grey-200 group-hover:text-white transition-colors duration-300">
-                  <span>
-                    1 Feb, 2020
-                  </span>
-                </div>
+                
                 <!-- <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span class="text-white text-sm font-medium"> View News</span>
                   <img src="assets/icons/arrow-right.svg" alt="arrow-right" class="filter brightness-0 invert">

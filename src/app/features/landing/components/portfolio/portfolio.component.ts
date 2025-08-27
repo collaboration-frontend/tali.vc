@@ -1,57 +1,64 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { PortfolioItemCardComponent } from './item-card/item-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [PortfolioItemCardComponent, NgFor],
+  imports: [PortfolioItemCardComponent, NgFor, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
   portfolioItems: any[] = [
     {
-      title: 'nile',
-      description: 'Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers.',
-      sector: 'IT',
+      title: 'Nile',
+      description: 'portfolio.items.nile.description',
+      sector: 'investmentFocus.areas.itServices',
       investmentYear: 2022,
-      imageUrl: 'assets/images/portfolio-image.png'
+      imageUrl: 'assets/images/portfolio-image.png',
+      website: 'https://nilesecure.com'
     },
     {
-      title: 'rewwa',
-      description: 'Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers.',
-      sector: 'Cloud',
+      title: 'Rewaa',
+      description: 'portfolio.items.rewaa.description',
+      sector: 'investmentFocus.areas.cloud',
       investmentYear: 2021,
-      imageUrl: 'assets/icons/rewaa.svg'
+      imageUrl: 'assets/icons/rewaa.svg',
+      website: 'https://www.rewaatech.com'
     },
     {
-      title: 'nearpay',
-      description: 'Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers.',
-      sector: 'FinTech',
+      title: 'NearPay',
+      description: 'portfolio.items.nearpay.description',
+      sector: 'investmentFocus.areas.fintech',
       investmentYear: 2023,
-      imageUrl: 'assets/icons/nearpay.svg'
+      imageUrl: 'assets/icons/nearpay.svg',
+      website: 'https://www.nearpay.io'
     },
     {
-      title: 'celona',
-      description: 'Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers.',
-      sector: 'IT',
+      title: 'Celona',
+      description: 'portfolio.items.celona.description',
+      sector: 'investmentFocus.areas.itServices',
       investmentYear: 2022,
-      imageUrl: 'assets/icons/celona.svg'
+      imageUrl: 'assets/icons/celona.svg',
+      website: 'https://www.celona.io'
     },
     {
-      title: 'NorthLadder',
-      description: 'Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers.',
-      sector: 'IT',
+      title: 'Northladder',
+      description: 'portfolio.items.northladder.description',
+      sector: 'investmentFocus.areas.itServices',
       investmentYear: 2023,
-      imageUrl: 'assets/icons/nothladder.svg'
+      imageUrl: 'assets/icons/nothladder.svg',
+      website: 'https://www.northladder.com'
     },
     {
-      title: 'cohere',
-      description: 'Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers.',
-      sector: 'Ai',
+      title: 'Cohere',
+      description: 'portfolio.items.cohere.description',
+      sector: 'investmentFocus.areas.ai',
       investmentYear: 2022,
-      imageUrl: 'assets/icons/cohere.svg'
+      imageUrl: 'assets/icons/cohere.svg',
+      website: 'https://cohere.com'
     }
   ];
 }

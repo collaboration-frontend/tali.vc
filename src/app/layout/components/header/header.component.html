@@ -4,15 +4,14 @@
       <div class="flex-shrink-0">
         <img class="w-32 lg:w-52" src="assets/images/icons/logo.png" alt="Logo">
       </div>
-
-      <div class="hidden lg:flex items-center space-x-8 mx-auto justify-center flex-1">
-        <a href="#home" class="py-4 hover:text-white text-white/50 transition active-menu outline-none">Home</a>
-        <a href="#about" class="py-4 hover:text-white text-white/50 transition outline-none ">About</a>
-        <a href="#portfolio" class="py-4 hover:text-white text-white/50 transition outline-none ">Portfolio</a>
-        <!-- <a href="#team" class="py-4 hover:text-white text-white/50 transition outline-none ">Team</a> -->
-        <a href="#news" class="py-4 hover:text-white text-white/50 transition outline-none ">News </a>
-        <a href="#contact" class="py-4 hover:text-white text-white/50 transition outline-none ">Contact
-          Us</a>
+ 
+      <div class="hidden lg:flex items-center gap-8 mx-auto justify-center flex-1">
+        <a href="#home" class="py-4 hover:text-white text-white/50 transition active-menu outline-none">{{ 'header.nav.home' | translate }}</a>
+        <a href="#about" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.about' | translate }}</a>
+        <a href="#portfolio" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.portfolio' | translate }}</a>
+        <!-- <a href="#team" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.team' | translate }}</a> -->
+        <a href="#news" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.news' | translate }}</a>
+        <a href="#contact" class="py-4 hover:text-white text-white/50 transition outline-none ">{{ 'header.nav.contact' | translate }}</a>
       </div>
 
       <!-- Right side controls -->
@@ -33,7 +32,7 @@
             class="language-dropdown absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
             <div *ngFor="let language of languages"
               class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
-              [class.bg-gray-50]="selectedLanguage.code === language.code">
+              [class.bg-gray-50]="selectedLanguage.code === language.code" (click)="selectLanguage(language)">
               <span class="text-gray-700">{{ language.name }}</span>
             </div>
           </div>
@@ -66,27 +65,27 @@
     <div class="px-2 pt-2 pb-3 space-y-1 bg-primary-100/95  mt-4  border-white/10 ">
       <a href="#home" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
         (click)="scrollToSection('home'); closeMobileMenu()">
-        Home
+        {{ 'header.nav.home' | translate }}
       </a>
       <a href="#about" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
         (click)="scrollToSection('about'); closeMobileMenu()">
-        About
+        {{ 'header.nav.about' | translate }}
       </a>
       <a href="#portfolio" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
         (click)="scrollToSection('portfolio'); closeMobileMenu()">
-        Portfolio
+        {{ 'header.nav.portfolio' | translate }}
       </a>
       <a href="#team" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
         (click)="scrollToSection('team'); closeMobileMenu()">
-        Team
+        {{ 'header.nav.team' | translate }}
       </a>
       <a href="#news" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
         (click)="scrollToSection('news'); closeMobileMenu()">
-        News & Reports
+        {{ 'header.nav.news' | translate }}
       </a>
       <a href="#contact" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item"
         (click)="scrollToSection('contact'); closeMobileMenu()">
-        Contact Us
+        {{ 'header.nav.contact' | translate }}
       </a>
 
       <!-- Mobile controls -->
@@ -109,7 +108,7 @@
               class="language-dropdown absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
               <div *ngFor="let language of languages"
                 class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
-                [class.bg-gray-50]="selectedLanguage.code === language.code">
+                [class.bg-gray-50]="selectedLanguage.code === language.code" (click)="selectLanguage(language)">
                 <span class="text-lg">{{ language.flag }}</span>
                 <span class="text-gray-700">{{ language.name }}</span>
                 <span class="text-gray-500 text-sm">{{ language.code.toUpperCase() }}</span>
@@ -135,7 +134,7 @@
         <div class="px-3 py-2">
           <button
             class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center space-x-2">
-            <span>Apply</span>
+            <span>{{ 'header.actions.apply' | translate }}</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
