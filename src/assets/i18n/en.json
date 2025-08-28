@@ -11,12 +11,10 @@
     "actions": {
       "apply": "Apply"
     }
-  }
-  ,
+  },
   "footer": {
     "copy": "Copyright stc {{year}}"
-  }
-  ,
+  },
   "banner": {
     "title": {
       "part1": "Funding what's next in",
@@ -26,17 +24,14 @@
       "line1": "To shape the future of society and the rise of technology by empowering and spearheading",
       "line2": "companies that open up a world of opportunities, driving growth and creating value for all."
     }
-  }
-  ,
+  },
   "about": {
     "intro": "tali ventures complements stc group's efforts as an engine of growth and invest in startups across various fields of technologies that align with stc group's innovation agenda."
-  }
-  ,
+  },
   "latestNews": {
     "title": "Latest news",
     "subtitle": "Lorem ipsum dolor sit amet consectetur. Semper nisi sodales sapien diam ornare pretium.",
-    "viewNews": "View News"
-    ,
+    "viewNews": "View News",
     "items": {
       "tarmeez": {
         "title": " stc group’s Tali Ventures leads a strategic Investment in Tarmeez Capital",
@@ -63,8 +58,7 @@
         "description": "Rewaa expands its retail management software platform to serve more markets"
       }
     }
-  }
-  ,
+  },
   "news": {
     "armeez": {
       "title": "stc group’s Tali Ventures leads a strategic Investment in Tarmeez Capital"
@@ -84,8 +78,7 @@
     "taliVentures": {
       "title": "stc Group unveils \"tali ventures”, to be the Corporate Venture Capital arm"
     }
-  }
-  ,
+  },
   "investmentFocus": {
     "title": "Investment Focus",
     "subtitle": "Catalyze technological transformation through pioneering. Strategic investments for a better tomorrow.",
@@ -101,21 +94,18 @@
       "propTech": "Prop Tech",
       "iot": "IoT",
       "blockchain": "BlockChain"
-    }
-    ,
+    },
     "cards": {
       "earlyStage": "Early-stage startup",
       "techAndDigital": "Technology and digital startups",
       "regionalGlobal": "Regional and global investment opportunities"
     },
     "imageAlt": "People working in modern office environment"
-  }
-  ,
+  },
   "investmentCriteria": {
     "title": "Investment criteria",
     "subtitle": "Catalyze technological transformation through pioneering. Strategic investments for a better tomorrow.."
-  }
-  ,
+  },
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Lorem ipsum dolor sit amet consectetur. Semper nisi sodales sapien diam ornare pretium.",
@@ -135,15 +125,16 @@
       },
       "northladder": {
         "description": "NorthLadder is the #1 Trade-in platform across 10+ countries. It is a fast-growing digital platform that enables frictionless trade of used electronics."
-      },  
+      },
       "cohere": {
         "description": "Cohere empowers every developer and enterprise to build amazing products and capture true business value with language AI."
       }
     }
-  }
-  ,
+  },
   "contactUs": {
     "badge": "contact us",
+    "every": "everything’s going",
+    "forward": "forward!",
     "title": "let's work together",
     "form": {
       "title": "Fill out this form",
