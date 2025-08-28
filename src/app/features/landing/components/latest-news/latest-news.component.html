@@ -19,7 +19,7 @@
               [src]="mainNewsItem?.imageUrl" alt="news-1">
           </div>
           <div class="p-4">
-            <div class="text-2xl font-medium mb-2">{{mainNewsItem?.title | translate}}</div>
+            <div class="text-2xl font-medium mb-2 line-clamp-2">{{mainNewsItem?.title | translate}}</div>
             <div class="lg:text-base text-sm text-grey-200 mb-2">
               {{mainNewsItem?.description | translate}}
             </div>
@@ -36,13 +36,13 @@
 
       <div class="col-span-12 lg:col-span-5">
         <div
-          class="group grid grid-cols-12 border border-natural-1000 transition-all cursor-pointer duration-500 ease-in-out h-auto hover:h-[200px] hover:bg-primary-100 px-4 py-2 overflow-hidden mb-2"
+          class="group grid grid-cols-12 border border-natural-1000 cursor-pointer px-4 py-2 overflow-hidden mb-2 transition-all duration-300 ease-in-out h-[120px] hover:h-[200px] bg-white hover:bg-primary-100"
           *ngFor="let item of newsArticles; let i = index" [class.active]="item?.active" (click)="onNewsClick(item, i)">
 
           <!-- Image Section -->
-          <div class="col-span-4 lg:col-span-3 self-center relative overflow-hidden me-4">
+          <div class="col-span-4 lg:col-span-3 self-start relative overflow-hidden me-4">
             <img [src]="item?.imageUrl" alt="preview-image"
-              class="w-full h-full object-cover transform transition-all duration-700 ease-out group-hover:scale-105 group-hover:rotate-[0.5deg]">
+              class="w-full h-full object-cover transform transition-[transform,rotate] duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[0.5deg]">
             <!-- Hover overlay effect -->
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 ease-in-out">
             </div>
