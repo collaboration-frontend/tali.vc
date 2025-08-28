@@ -4,26 +4,37 @@
     <div class="grid grid-cols-3 gap-4 lg:gap-20 mb-8 max-w-md">
       <!-- Column 1 -->
       <div class="space-y-4">
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">{{ 'header.nav.home' |
+        <a href="#home" class="block text-white text-base hover:text-gray-300 transition-colors mb-8"
+          (click)="scrollToSection('home', $event)">{{
+          'header.nav.home' |
           translate }}</a>
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{ 'header.nav.about' |
+        <a href="#about" class="block text-white text-base hover:text-gray-300 transition-colors"
+          (click)="scrollToSection('about', $event)">{{ 'header.nav.about'
+          |
           translate }}</a>
       </div>
 
       <!-- Column 2 -->
       <div class="space-y-4">
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">{{
+        <a href="#portfolio" class="block text-white text-base hover:text-gray-300 transition-colors mb-8"
+          (click)="scrollToSection('portfolio', $event)">{{
           'header.nav.portfolio' | translate }}</a>
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{ 'header.nav.team' |
+        <a *ngIf="false" href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{
+          'header.nav.team' |
+          translate }}</a>
+        <a href="#contact" class="block text-white text-base hover:text-gray-300 transition-colors"
+          (click)="scrollToSection('contact', $event)">{{
+          'header.nav.contact' |
           translate }}</a>
       </div>
 
       <!-- Column 3 -->
       <div class="space-y-4">
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors mb-8">{{ 'header.nav.news' |
+        <a href="#news" class="block text-white text-base hover:text-gray-300 transition-colors mb-8"
+          (click)="scrollToSection('news', $event)">{{
+          'header.nav.news' |
           translate }}</a>
-        <a href="#" class="block text-white text-base hover:text-gray-300 transition-colors">{{ 'header.nav.contact' |
-          translate }}</a>
+
       </div>
     </div>
 
