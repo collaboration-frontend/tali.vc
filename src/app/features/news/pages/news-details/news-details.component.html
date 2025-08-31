@@ -1,42 +1,57 @@
-<section class="container py-10">
-  <div class="max-w-5xl mx-auto">
-    <div class="w-full mb-6 md:mb-10">
-      <img [src]="currentNews?.imageUrl" alt="news" class="w-full h-auto rounded-md shadow" />
+<section class="container py-20">
+  <div class="grid grid-cols-12 gap-4 mt-12">
+    <div class="col-span-12">
+      <a href="/" class="bg-natural-100 border cursor-pointer border-natural-1000 p-3 text-extended-dark-slate">
+        Back</a>
+    </div>
+    <div class="col-span-12">
+      <div class="flex items-center gap-3 my-6">
+        <img [src]="currentNews?.imageUrl" alt="news" class="w-full object-cover" />
+
+      </div>
+    </div>
+    <div class="col-span-12">
+      <div class="text-extended-grey bg-natural-100 flex justify-between items-center p-6 mb-8"
+        *ngIf="currentNews?.date as d">
+        <span class="text-extended-dark-slate font-medium text-xl">News Name 2</span>
+        <div class="flex items-center gap-4">
+          <img class="cursor-pointer" src="assets/images/icons/CalendarBlank.svg" alt="">
+          <p>{{ d | date:'d MMM, y' }}</p>
+        </div>
+      </div>
     </div>
 
-    <h1 class="text-2xl md:text-3xl font-semibold text-primary mb-2">{{ currentNews?.title | translate }}</h1>
-    <div class="text-extended-grey mb-8" *ngIf="currentNews?.date as d">{{ d | date:'d MMM, y' }}</div>
   </div>
-  
-  @switch (newsId) {
-    @case ('1') {
-      <app-armeez></app-armeez>
-    }
-    @case ('2') {
-      <app-graphiant/>
-    }
-    @case ('3') {
-      <app-northladder></app-northladder>
-    }
-    @case ('4') {
-      <app-tali-ventures></app-tali-ventures>
-    }
-    @case ('5') {
-      <app-nearpay></app-nearpay>
-    }
-    @case ('6') {
-      <app-rewaa></app-rewaa>
-    }
-  }
 
-  <div class="mt-12">
-    <h3 class="text-3xl font-medium tracking-tight text-extended-black mb-6">Other News</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a *ngFor="let item of otherNews"
-         [routerLink]="['/news', item.id]"
-         class="group block border border-natural-1000 bg-white hover:shadow-lg transition-shadow duration-300">
+  @switch (newsId) {
+  @case ('1') {
+  <app-armeez class="col-span-12"></app-armeez>
+  }
+  @case ('2') {
+  <app-graphiant class="col-span-12" />
+  }
+  @case ('3') {
+  <app-northladder class="col-span-12"></app-northladder>
+  }
+  @case ('4') {
+  <app-tali-ventures class="col-span-12"></app-tali-ventures>
+  }
+  @case ('5') {
+  <app-nearpay class="col-span-12"></app-nearpay>
+  }
+  @case ('6') {
+  <app-rewaa class="col-span-12"></app-rewaa>
+  }
+  }
+  <div class="grid grid-cols-12 gap-4 mt-11">
+    <div class="col-span-12">
+      <h3 class="text-3xl font-medium tracking-tight text-extended-black mb-6">Other News</h3>
+    </div>
+    <div *ngFor="let item of otherNews" [routerLink]="['/news', item.id]" class="col-span-12 lg:col-span-4">
+      <a class="group block border border-natural-1000 bg-white hover:shadow-lg transition-shadow duration-300">
         <div class="w-full h-64 overflow-hidden">
-          <img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-[1.02]" [src]="item.imageUrl" alt="news-image">
+          <img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-[1.02]"
+            [src]="item.imageUrl" alt="news-image">
         </div>
         <div class="p-5">
           <div class="text-xl font-medium text-extended-black mb-2 line-clamp-2">{{ item.title | translate }}</div>
@@ -50,6 +65,5 @@
     </div>
   </div>
 
+
 </section>
-
-
