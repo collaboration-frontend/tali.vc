@@ -18,6 +18,7 @@ interface Language {
 export class HeaderComponent implements OnInit {
   isMobileMenuOpen = false;
   isLanguageDropdownOpen = false;
+  isScrolled = false;
 
   languages: Language[] = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -43,6 +44,8 @@ export class HeaderComponent implements OnInit {
     this.translate.use(detectedLanguage.code);
     document.documentElement.dir =
       detectedLanguage.code === "ar" ? "rtl" : "ltr";
+    // Initialize scrolled state on load
+    this.isScrolled = window.scrollY > 10;
   }
 
   @HostListener("document:click", ["$event"])
@@ -72,6 +75,8 @@ export class HeaderComponent implements OnInit {
     if (this.isLanguageDropdownOpen) {
       this.closeLanguageDropdown();
     }
+    // Update header background based on scroll position
+    this.isScrolled = window.scrollY > 10;
   }
 
   toggleMobileMenu(): void {

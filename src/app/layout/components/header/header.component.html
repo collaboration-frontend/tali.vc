@@ -1,4 +1,4 @@
-<nav class="fixed w-full z-50 bg-transparent border-b border-white/10 p-[11px]">
+<nav class="fixed w-full z-50 border-b border-white/10 p-[11px] transition-colors duration-300" [ngClass]="{ 'bg-primary-100/95': isScrolled, 'bg-transparent': !isScrolled }">
   <div class="container">
     <div class="flex items-center justify-between">
       <div class="flex-shrink-0">
