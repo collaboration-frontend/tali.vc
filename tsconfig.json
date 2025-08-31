@@ -26,6 +26,9 @@
     "paths": {
       "@components/*": [
         "src/app/components/*"
+      ],
+      "@news/*": [
+        "src/app/features/news/*"
       ]
     }
   },
