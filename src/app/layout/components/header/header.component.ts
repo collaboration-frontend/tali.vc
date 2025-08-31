@@ -135,14 +135,23 @@ export class HeaderComponent implements OnInit {
     if (event) {
       event.preventDefault();
     }
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+    const performSmoothScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    if (!this.isHomeRoute) {
+      this.router.navigateByUrl("/").then(() => {
+        setTimeout(() => {
+          performSmoothScroll();
+        }, 50);
       });
-      // Close mobile menu if it's open
-      this.closeMobileMenu();
+    } else {
+      performSmoothScroll();
     }
+    // Close mobile menu if it's open
+    this.closeMobileMenu();
   }
 }
