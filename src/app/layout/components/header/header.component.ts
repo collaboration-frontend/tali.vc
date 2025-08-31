@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
+import { NavigationEnd, Router, RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
@@ -12,7 +12,7 @@ interface Language {
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
