@@ -93,7 +93,8 @@
       "media": "Media",
       "propTech": "Prop Tech",
       "iot": "IoT",
-      "blockchain": "BlockChain"
+      "blockchain": "BlockChain",
+      "network": "Network"
     },
     "cards": {
       "earlyStage": "Early-stage startup",

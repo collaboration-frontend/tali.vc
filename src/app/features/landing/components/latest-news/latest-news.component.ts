@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { DatePipe, NgFor } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { Router, RouterLink } from "@angular/router";
 import { NewsItem } from '@news/model/news.model';
@@ -10,7 +10,9 @@ import { NEWS_LIST } from '@news/constant/news.constant';
   standalone: true,
   imports: [
     NgFor,
-    TranslateModule
+    TranslateModule,
+    RouterLink,
+    DatePipe
 ],
   templateUrl: './latest-news.component.html',
   styleUrls: ['./latest-news.component.scss']

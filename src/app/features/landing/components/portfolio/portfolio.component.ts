@@ -13,6 +13,22 @@ import { TranslateModule } from '@ngx-translate/core';
 export class PortfolioComponent {
   portfolioItems: any[] = [
     {
+      title: 'Tarmeez',
+      description: 'portfolio.items.nile.description',
+      sector: 'investmentFocus.areas.fintech',
+      investmentYear: 2022,
+      imageUrl: 'assets/icons/tarmeez.svg',
+      website: 'https://tarmeez.co'
+    },
+    {
+      title: 'Graphiant',
+      description: 'portfolio.items.nile.description',
+      sector: 'investmentFocus.areas.network',
+      investmentYear: 2022,
+      imageUrl: 'assets/images/Graphiant.png',
+      website: 'https://www.graphiant.com'
+    },
+    {
       title: 'Nile',
       description: 'portfolio.items.nile.description',
       sector: 'investmentFocus.areas.itServices',

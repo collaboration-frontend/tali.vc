@@ -11,5 +11,5 @@ import { Component, input } from '@angular/core';
 })
 export class InvestmentFocusItemCardComponent {
   title = input<string>();
-
+  icon = input<string>()
 }
