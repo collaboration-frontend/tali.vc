@@ -45,7 +45,7 @@
   }
   <div class="grid grid-cols-12 gap-4 mt-11">
     <div class="col-span-12">
-      <h3 class="text-3xl font-medium tracking-tight text-extended-black mb-6">Other News</h3>
+      <h3 class="text-3xl font-medium tracking-tight text-extended-black mb-6">{{ 'news.otherNews' | translate }}</h3>
     </div>
     <div *ngFor="let item of otherNews" [routerLink]="['/news', item.id]" class="col-span-12 lg:col-span-4">
       <a class="group block border border-natural-1000 bg-white hover:shadow-lg transition-shadow duration-300">
