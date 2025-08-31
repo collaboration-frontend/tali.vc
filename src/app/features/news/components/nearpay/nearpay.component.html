@@ -1,13 +1,8 @@
 <section class="container mx-auto max-w-5xl p-4 md:p-6 lg:p-8" *ngIf="!isArabic">
-  <div class="w-full mb-6 md:mb-10">
-    <img [src]="headerImageSrc" alt="Nearpay" class="w-full h-auto rounded-md shadow" />
-  </div>
 
   <div class="grid grid-cols-1 gap-8">
     <article class="space-y-4">
-      <h1 class="text-2xl md:text-3xl font-semibold text-primary">
-        {{ 'news.nearpay.title' | translate }}
-      </h1>
+      
 
       <ul class="list-disc pl-6 space-y-2 text-extended-grey">
         <li>Nearpay secures $14M in Series A funding, led by Sanabil Investments, with participation from stc Corporate Investment Fund, Vision Ventures, Hala Ventures and Arzan Ventures.</li>
@@ -47,15 +42,10 @@
  </section>
 
 <section class="container mx-auto max-w-5xl p-4 md:p-6 lg:p-8" *ngIf="isArabic">
-  <div class="w-full mb-6 md:mb-10">
-    <img [src]="headerImageSrc" alt="Nearpay" class="w-full h-auto rounded-md shadow" />
-  </div>
 
   <div class="grid grid-cols-1 gap-8">
     <article class="space-y-4 text-right" dir="rtl" lang="ar">
-      <h1 class="text-2xl md:text-3xl font-semibold text-primary">
-        {{ 'news.nearpay.title' | translate }}
-      </h1>
+      
 
       <p class="text-gray-800 leading-7">
         بي تغلق جولة استثمارية (Series A) بقيمة 52 مليون ريال بقيادة سنابل للاستثمار

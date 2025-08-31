@@ -1,5 +1,13 @@
-<
 <section class="container py-10">
+  <div class="max-w-5xl mx-auto">
+    <div class="w-full mb-6 md:mb-10">
+      <img [src]="currentNews?.imageUrl" alt="news" class="w-full h-auto rounded-md shadow" />
+    </div>
+
+    <h1 class="text-2xl md:text-3xl font-semibold text-primary mb-2">{{ currentNews?.title | translate }}</h1>
+    <div class="text-extended-grey mb-8" *ngIf="currentNews?.date as d">{{ d | date:'d MMM, y' }}</div>
+  </div>
+  
   @switch (newsId) {
     @case ('1') {
       <app-armeez></app-armeez>
@@ -20,6 +28,28 @@
       <app-rewaa></app-rewaa>
     }
   }
+
+  <div class="mt-12">
+    <h3 class="text-3xl font-medium tracking-tight text-extended-black mb-6">Other News</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a *ngFor="let item of otherNews"
+         [routerLink]="['/news', item.id]"
+         class="group block border border-natural-1000 bg-white hover:shadow-lg transition-shadow duration-300">
+        <div class="w-full h-64 overflow-hidden">
+          <img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-[1.02]" [src]="item.imageUrl" alt="news-image">
+        </div>
+        <div class="p-5">
+          <div class="text-xl font-medium text-extended-black mb-2 line-clamp-2">{{ item.title | translate }}</div>
+          <p class="text-sm text-extended-grey line-clamp-3 mb-4">{{ item.description | translate }}</p>
+          <div class="text-sm text-extended-grey flex items-center gap-2">
+            <img src="assets/images/news/CalendarBlank.svg" alt="calendar" class="w-4 h-4">
+            <span>{{ item.date | date:'d MMM, y' }}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
 </section>
 
 
