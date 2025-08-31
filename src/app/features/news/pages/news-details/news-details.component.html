@@ -1,10 +1,12 @@
 <section class="container py-20">
   <div class="grid grid-cols-12 gap-4 mt-12">
     <div class="col-span-12">
-      <button href="/"
-        class="bg-natural-100 border flex items-center gap-2 cursor-pointer border-natural-1000 px-3 py-2 text-extended-dark-slate">
-        <img src="assets/images/icons/arrow-back.svg" alt="">
-        Back</button>
+      <div class="flex justify-start">
+        <a href="/"
+          class="bg-natural-100 border flex items-center gap-2 cursor-pointer border-natural-1000 px-3 py-2 text-extended-dark-slate">
+          <img src="assets/images/icons/arrow-back.svg" alt="">
+          Back</a>
+      </div>
     </div>
     <div class="col-span-12">
       <div class="flex items-center gap-3 my-6">
@@ -52,7 +54,7 @@
     <div *ngFor="let item of otherNews" [routerLink]="['/news', item.id]" class="col-span-12 lg:col-span-4">
       <a class="group block cursor-pointer border border-natural-1000 bg-white hover:shadow-lg transition-shadow duration-300 flex flex-col justify-start"
         style="" [ngClass]="
-          'w-[370px] h-[480px] min-w-[370px] min-h-[480px] max-w-[370px] max-h-[480px]'
+          'w-[370px] h-[480px] min-w-[400px] min-h-[480px] max-w-[370px] max-h-[480px]'
         ">
         <div class="w-full overflow-hidden h-[256px] min-h-[256px] max-h-[256px]">
           <img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-[1.02]"
