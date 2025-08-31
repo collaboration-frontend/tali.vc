@@ -18,7 +18,7 @@
     <div class="col-span-12">
       <div class="text-extended-grey bg-natural-100 flex justify-between items-center p-6 mb-8"
         *ngIf="currentNews?.date as d">
-        <span class="text-extended-dark-slate font-medium text-xl">{{ currentNews?.title | translate }}</span>
+        <span class="text-extended-dark-slate font-medium text-xl">{{ currentNews?.detailsTitle ? (currentNews?.detailsTitle | translate) : (currentNews?.title | translate) }}</span>
         <div class="flex items-center gap-4">
           <img class="cursor-pointer" src="assets/images/icons/CalendarBlank.svg" alt="">
           <p>{{ d | date:'d MMM, y' }}</p>
