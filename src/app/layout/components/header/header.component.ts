@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
   isMobileMenuOpen = false;
   isLanguageDropdownOpen = false;
   isScrolled = false;
+  isHomeRoute = false;
 
   languages: Language[] = [
     { code: "en", name: "English", flag: "🇺🇸" },
@@ -29,7 +31,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private elementRef: ElementRef,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +49,14 @@ export class HeaderComponent implements OnInit {
       detectedLanguage.code === "ar" ? "rtl" : "ltr";
     // Initialize scrolled state on load
     this.isScrolled = window.scrollY > 10;
+
+    // Initialize route state and subscribe to route changes
+    this.updateRouteState(this.router.url);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updateRouteState(event.urlAfterRedirects);
+      }
+    });
   }
 
   @HostListener("document:click", ["$event"])
@@ -55,6 +66,11 @@ export class HeaderComponent implements OnInit {
       this.closeMobileMenu();
       this.closeLanguageDropdown();
     }
+  }
+
+  private updateRouteState(url: string): void {
+    const cleanUrl = url.split("?")[0].split("#")[0];
+    this.isHomeRoute = cleanUrl === "/" || cleanUrl === "";
   }
 
   @HostListener("window:resize", ["$event"])
