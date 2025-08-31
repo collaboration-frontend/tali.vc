@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { DatePipe, NgFor } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { DatePipe, NgFor, NgClass } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router, RouterLink } from "@angular/router";
 import { NewsItem } from '@news/model/news.model';
 import { NEWS_LIST } from '@news/constant/news.constant';
@@ -10,6 +10,7 @@ import { NEWS_LIST } from '@news/constant/news.constant';
   standalone: true,
   imports: [
     NgFor,
+    NgClass,
     TranslateModule,
     RouterLink,
     DatePipe
@@ -20,10 +21,16 @@ import { NEWS_LIST } from '@news/constant/news.constant';
 export class LatestNewsComponent implements OnInit {
   router = inject(Router);
   newsArticles: NewsItem[] = NEWS_LIST;
+  private readonly translate = inject(TranslateService);
+  isRtl = false;
 
   mainNewsItem: NewsItem | null = null;
 
   ngOnInit(): void {
+    this.isRtl = (this.translate.currentLang || localStorage.getItem('lang') || 'en') === 'ar';
+    this.translate.onLangChange.subscribe((e) => {
+      this.isRtl = e.lang === 'ar';
+    });
     this.onNewsClick(this.newsArticles[0], 0);
   }
 
