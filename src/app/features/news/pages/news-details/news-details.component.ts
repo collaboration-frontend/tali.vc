@@ -7,7 +7,7 @@ import { NearpayComponent } from '../../components/nearpay/nearpay.component';
 import { TaliVenturesComponent } from '../../components/tali-ventures/tali-ventures.component';
 import { RewaaComponent } from '../../components/rewaa/rewaa.component';
 import { NorthladderComponent } from '../../components/northladder/northladder.component';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NEWS_LIST } from '@news/constant/news.constant';
 import type { NewsItem } from '@news/model/news.model';
 
@@ -30,15 +30,21 @@ import type { NewsItem } from '@news/model/news.model';
 })
 export default class NewsDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly translate = inject(TranslateService);
 
   newsId: string | null = null;
   otherNews: NewsItem[] = [];
   currentNews: NewsItem | undefined;
+  isRtl = false;
 
   constructor() {
   }
   
   ngOnInit(): void {
+    this.isRtl = (this.translate.currentLang || localStorage.getItem('lang') || 'en') === 'ar';
+    this.translate.onLangChange.subscribe((e) => {
+      this.isRtl = e.lang === 'ar';
+    });
     this.activatedRoute.paramMap.subscribe((params) => {
       this.newsId = params.get('id');
       const currentIdAsNumber = Number(this.newsId);
