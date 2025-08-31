@@ -127,7 +127,13 @@
         "description": "NorthLadder is the #1 Trade-in platform across 10+ countries. It is a fast-growing digital platform that enables frictionless trade of used electronics."
       },
       "cohere": {
-        "description": "Cohere empowers every developer and enterprise to build amazing products and capture true business value with language AI."
+        "description": "Cohere empowers every developer and enterprise to build amazing products and capture true business value with language AI. "
+      },
+      "graphiant":{
+        "description": "Graphiant is a next-generation Network-as-a-Service (NaaS) company delivering secure, high-performance, and cost-efficient connectivity across hybrid and multi-cloud environments."
+      },
+      "tarmeez":{
+        "description": "Tarmeez Capital is a Saudi fintech company, licensed by the Capital Market Authority, that provides innovative solutions for businesses to secure financing through Islamic sukuk issuance. It also offers investors easy access to Sharia-compliant investment opportunities through an intuitive digital experience."
       }
     }
   },
