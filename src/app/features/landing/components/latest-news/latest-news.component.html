@@ -23,7 +23,7 @@
             <div class="lg:text-base text-sm text-grey-200 mb-2">
               {{mainNewsItem?.description | translate}}
             </div>
- 
+
             <div class="flex items-center justify-between w-full mt-4">
               <div class="flex items-center gap-2">
                 <img src="assets/images/news/CalendarBlank.svg" alt="">
@@ -31,7 +31,8 @@
               </div>
               <a class="flex items-center gap-2  duration-300" routerLink="/news/{{mainNewsItem?.id}}">
               </a>
-              <span class="text-primary-100 text-sm font-medium flex items-center gap-2" [ngClass]="{ 'flex-row-reverse': isRtl }"> {{ 'latestNews.viewNews' | translate }}
+              <span class="text-primary-100 text-sm font-medium flex items-center gap-2"
+                [ngClass]="{ 'flex-row-reverse': isRtl }"> {{ 'latestNews.viewNews' | translate }}
                 <img src="assets/icons/arrow-right.svg" alt="">
               </span>
 
@@ -42,15 +43,15 @@
 
       <div class="col-span-12 lg:col-span-5">
         <div
-          class="group grid grid-cols-12 border border-natural-1000 cursor-pointer px-4 py-2 overflow-hidden mb-2 transition-all duration-300 ease-in-out h-[120px] hover:h-[200px] bg-white hover:bg-primary-100"
+          class="group grid grid-cols-12 border border-natural-1000 cursor-pointer px-4 py-2 overflow-hidden mb-2 transition-all duration-300 ease-in-out h-[120px] bg-white"
           *ngFor="let item of newsArticles; let i = index" [class.active]="item?.active" (click)="onNewsClick(item, i)">
 
           <!-- Image Section -->
           <div class="col-span-4 lg:col-span-3 self-start relative overflow-hidden me-4">
             <img [src]="item?.imageUrl" alt="preview-image"
-              class="w-full h-full object-cover transform transition-[transform,rotate] duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[0.5deg]">
+              class="w-full h-full object-cover transform transition-[transform,rotate] duration-300 ease-in-out">
             <!-- Hover overlay effect -->
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 ease-in-out">
+            <div class="absolute inset-0 bg-black/0  transition-all duration-300 ease-in-out">
             </div>
           </div>
 
@@ -60,22 +61,21 @@
             <!-- Title -->
             <div class="mb-3">
               <h3
-                class="text-base lg:text-xl font-medium text-extended-black group-hover:text-white transition-colors duration-300 line-clamp-1 group-hover:leading-tight">
+                class="text-base lg:text-xl font-medium text-extended-black transition-colors duration-300 line-clamp-1">
                 {{item?.title | translate}}
               </h3>
             </div>
 
             <!-- Description -->
             <div class="flex-grow mb-4">
-              <p class="description-text group-hover:text-white">
+              <p class="description-text">
                 {{item?.description | translate}}
               </p>
             </div>
 
             <!-- Date Section -->
             <div class="flex items-center transition-colors duration-300">
-              <div
-                class="flex items-center justify-center w-8 h-8 transition-all duration-300 group-hover:scale-110 mr-3">
+              <div class="flex items-center justify-center w-8 h-8 transition-all duration-300 ">
 
               </div>
               <div class="flex items-center justify-between w-full">
