@@ -30,7 +30,7 @@
   },
   "latestNews": {
     "title": "Latest news",
-    "subtitle": "Lorem ipsum dolor sit amet consectetur. Semper nisi sodales sapien diam ornare pretium.",
+    "subtitle": "Highlights of Our Latest Investments.",
     "viewNews": "View News",
     "items": {
       "tarmeez": {
@@ -104,8 +104,11 @@
     },
     "cards": {
       "earlyStage": "Early-stage startup",
+      "earlyStageSub": "Early-stage startups are the birthplace of innovation, where visionary ideas meet execution.",
       "techAndDigital": "Technology and digital startups",
-      "regionalGlobal": "Regional and global investment opportunities"
+      "techAndDigitalSub": "We invest in the most promising technology and digital startups, backed by exceptional teams.",
+      "regionalGlobal": "Regional and global investment opportunities",
+      "regionalGlobalSub": "Diversifying investments across regional and global markets to capture growth opportunities and create lasting value."
     },
     "imageAlt": "People working in modern office environment"
   },
@@ -115,7 +118,7 @@
   },
   "portfolio": {
     "title": "Portfolio",
-    "subtitle": "Lorem ipsum dolor sit amet consectetur. Semper nisi sodales sapien diam ornare pretium.",
+    "subtitle": "Investments That Shape the Future.",
     "website": "Website",
     "items": {
       "nile": {
@@ -136,10 +139,10 @@
       "cohere": {
         "description": "Cohere empowers every developer and enterprise to build amazing products and capture true business value with language AI. "
       },
-      "graphiant":{
+      "graphiant": {
         "description": "Graphiant is a next-generation Network-as-a-Service (NaaS) company delivering secure, high-performance, and cost-efficient connectivity across hybrid and multi-cloud environments."
       },
-      "tarmeez":{
+      "tarmeez": {
         "description": "Tarmeez Capital is a Saudi fintech company, licensed by the Capital Market Authority, that provides innovative solutions for businesses to secure financing through Islamic sukuk issuance. It also offers investors easy access to Sharia-compliant investment opportunities through an intuitive digital experience."
       }
     }
