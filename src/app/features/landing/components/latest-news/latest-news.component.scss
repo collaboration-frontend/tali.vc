@@ -1,23 +1,46 @@
 .description-text {
-  @apply text-sm font-normal lg:text-base text-extended-grey  transition-colors duration-300 line-clamp-1 leading-relaxed;
+  @apply text-sm font-normal lg:text-base text-extended-grey transition-colors duration-300 line-clamp-1 leading-relaxed;
 }
 
 .active {
-    overflow: hidden; 
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem; 
-    padding-left: 1rem;
-    padding-right: 1rem; 
-    height: auto; 
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms; 
-    transition-duration: 500ms; 
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
-    cursor: pointer;    
-    background-color: rgb(79 0 140 / var(--tw-bg-opacity, 1)); 
+  overflow: hidden;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: auto;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background-color: rgb(79 0 140 / var(--tw-bg-opacity, 1));
 
-    h3, p, span {
-        color: #fff;
-    }
+  h3,
+  p,
+  span {
+    color: #fff;
+  }
+}
+
+.scrollbar-item {
+  max-height: 700px; // اضبط القيمة حسب ارتفاع البوكس عندك
+  overflow-y: auto;
+  scrollbar-width: thin; // للـ Firefox
+  scrollbar-color: #aaa transparent; // لون السكرول
+
+  // للـ Webkit (Chrome, Edge, Safari)
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 }

@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="col-span-12 lg:col-span-5">
+      <div class="col-span-12 lg:col-span-5 scrollbar-item">
         <div
           class="group grid grid-cols-12 border border-natural-1000 cursor-pointer px-4 py-2 overflow-hidden mb-2 transition-all duration-300 ease-in-out h-[120px] bg-white"
           *ngFor="let item of newsArticles; let i = index" [class.active]="item?.active" (click)="onNewsClick(item, i)">
@@ -78,12 +78,9 @@
               <div class="flex items-center justify-center w-8 h-8 transition-all duration-300 ">
 
               </div>
-              <div class="flex items-center justify-between w-full">
-
-                <!-- <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span class="text-white text-sm font-medium"> View News</span>
-                  <img src="assets/icons/arrow-right.svg" alt="arrow-right" class="filter brightness-0 invert">
-                </div> -->
+              <div class="flex items-center gap-2">
+                <img src="assets/images/news/CalendarBlank.svg" alt="">
+                <span class="text-sm text-extended-grey">{{item?.date | date:'d MMM, y' }}</span>
               </div>
             </div>
 
