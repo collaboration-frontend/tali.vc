@@ -10,7 +10,7 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
   styleUrls: ["graphiant.component.scss"],
 })
 export class GraphiantComponent implements OnInit {
-  headerImageSrc: string = "assets/images/Graphiant.png";
+  headerImageSrc: string = "assets/images/graphiantnews.png";
   isArabic: boolean = false;
 
   constructor(private translate: TranslateService) {}
