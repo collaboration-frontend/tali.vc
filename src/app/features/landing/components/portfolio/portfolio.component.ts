@@ -33,7 +33,7 @@ export class PortfolioComponent {
       description: "portfolio.items.nile.description",
       sector: "investmentFocus.areas.itServices",
       investmentYear: 2022,
-      imageUrl: "assets/images/portfolio-image.png",
+      imageUrl: "assets/images/nile-card.png",
       website: "https://nilesecure.com",
     },
     {

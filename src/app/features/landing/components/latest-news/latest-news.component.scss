@@ -24,12 +24,33 @@
   }
 }
 
-.scrollbar-item {
-  max-height: 700px; //
-  overflow-y: auto;
-  scrollbar-width: none;
-  scrollbar-color: #aaa transparent; //
+.fixed-news-card {
+  height: 700px; // الارتفاع اللي انت محتاجه
+  overflow-y: auto; // اسكرول رأسي
+  overflow-x: hidden; // منع أي اسكرول أفقي
+  scroll-behavior: smooth;
 
+  -ms-overflow-style: none; // إخفاء السكروول في إنترنت إكسبلورر و Edge القديم
+  scrollbar-width: none; // إخفاء السكروول في فايرفوكس
+
+  &::-webkit-scrollbar {
+    display: none; // إخفاء السكروول في كروم و سفاري
+  }
+}
+
+/* Responsive scrollbar for all devices */
+.scrollbar-item {
+  height: 702px !important;
+  overflow-x: scroll !important; // بدل scroll خليتها hidden
+  scrollbar-color: #aaa transparent;
+  scrollbar-width: thin;
+  -ms-overflow-style: none; // إخفاء السكروول في إنترنت إكسبلورر و Edge القديم
+  scrollbar-width: none;
+
+  // منع المسافة الفاضية تحت آخر عنصر
+  &>*:last-child {
+    margin-bottom: 0 !important;
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -42,5 +63,35 @@
 
   &::-webkit-scrollbar-track {
     background: transparent;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+  .scrollbar-item {
+    height: 720px !important;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #bbb;
+    }
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .scrollbar-item {
+    max-height: 500px;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+    }
   }
 }
