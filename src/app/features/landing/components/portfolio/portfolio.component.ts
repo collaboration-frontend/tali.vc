@@ -25,7 +25,7 @@ export class PortfolioComponent {
       description: "portfolio.items.graphiant.description",
       sector: "investmentFocus.areas.network",
       investmentYear: 2022,
-      imageUrl: "assets/images/Graphiant.png",
+      imageUrl: "assets/images/graphiantp.png",
       website: "https://www.graphiant.com",
     },
     {

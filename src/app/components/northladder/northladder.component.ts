@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-northladder',
+  selector: "app-northladder",
   standalone: true,
   imports: [],
-  templateUrl: './northladder.component.html',
-  styleUrls: ['./northladder.component.scss']
+  templateUrl: "./northladder.component.html",
+  styleUrls: ["./northladder.component.scss"],
 })
 export class NorthladderComponent {
-  headerImageSrc: string = 'assets/images/northladder.jpeg';
+  headerImageSrc: string = "assets/images/northladdernews.jpeg";
 }
-
-

@@ -1,55 +1,55 @@
-import type { NewsItem } from '@news/model/news.model';
+import type { NewsItem } from "@news/model/news.model";
 export const NEWS_LIST: NewsItem[] = [
   {
     id: 1,
-    title: 'latestNews.items.tarmeez.title',
-    description: 'latestNews.items.tarmeez.description',
-    date: new Date('2025-07-07'),
-    category: 'Investments',
-    imageUrl: 'assets/images/Tarmeez.png'
+    title: "latestNews.items.tarmeez.title",
+    description: "latestNews.items.tarmeez.description",
+    date: new Date("2025-07-07"),
+    category: "Investments",
+    imageUrl: "assets/images/Tarmeez.png",
   },
   {
     id: 2,
-    title: 'latestNews.items.graphiant.title',
-    detailsTitle: 'latestNews.items.graphiant.detailsTitle',
-    description: 'latestNews.items.graphiant.description',
-    date: new Date('2024-01-15'),
-    category: 'Investments',
-    imageUrl: 'assets/images/Graphiant.png'
+    title: "latestNews.items.graphiant.title",
+    detailsTitle: "latestNews.items.graphiant.detailsTitle",
+    description: "latestNews.items.graphiant.description",
+    date: new Date("2024-01-15"),
+    category: "Investments",
+    imageUrl: "assets/images/graphiant.png",
   },
   {
     id: 3,
-    title: 'latestNews.items.northladder.title',
-    description: 'latestNews.items.northladder.description',
-    date: new Date('2025-05-1'),
-    category: 'Investments',
-    imageUrl: 'assets/images/northladder.jpeg'
+    title: "latestNews.items.northladder.title",
+    description: "latestNews.items.northladder.description",
+    date: new Date("2025-05-1"),
+    category: "Investments",
+    imageUrl: "assets/images/northladdernews.jpeg",
   },
   {
     id: 4,
-    title: 'latestNews.items.taliPr.title',
-    detailsTitle: 'latestNews.items.taliPr.detailsTitle',
-    description: 'latestNews.items.taliPr.description',
-    date: new Date('2025-03-03'),
-    category: 'Investments',
-    imageUrl: 'assets/images/tali.png'
+    title: "latestNews.items.taliPr.title",
+    detailsTitle: "latestNews.items.taliPr.detailsTitle",
+    description: "latestNews.items.taliPr.description",
+    date: new Date("2025-03-03"),
+    category: "Investments",
+    imageUrl: "assets/images/talinews.jpeg",
   },
   {
     id: 5,
-    title: 'latestNews.items.nearpay.title',
-    detailsTitle: 'latestNews.items.nearpay.detailsTitle',
-    description: 'latestNews.items.nearpay.description',
-    date: new Date('2024-01-15'),
-    category: 'Investments',
-    imageUrl: 'assets/images/nearpay.jpeg'
+    title: "latestNews.items.nearpay.title",
+    detailsTitle: "latestNews.items.nearpay.detailsTitle",
+    description: "latestNews.items.nearpay.description",
+    date: new Date("2024-01-15"),
+    category: "Investments",
+    imageUrl: "assets/images/nearpay.jpeg",
   },
   {
     id: 6,
-    title: 'latestNews.items.rewaa.title',
-    detailsTitle: 'latestNews.items.rewaa.detailsTitle',
-    description: 'latestNews.items.rewaa.description',
-    date: new Date('2023-08-28'),
-    category: 'Investments',
-    imageUrl: 'assets/images/rewaa.jpg'
-  }
+    title: "latestNews.items.rewaa.title",
+    detailsTitle: "latestNews.items.rewaa.detailsTitle",
+    description: "latestNews.items.rewaa.description",
+    date: new Date("2023-08-28"),
+    category: "Investments",
+    imageUrl: "assets/images/rewaa.jpg",
+  },
 ];
