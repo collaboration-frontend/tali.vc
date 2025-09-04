@@ -20,14 +20,14 @@
         <span class="text-extended-dark-slate font-medium text-xl col-span-12 lg:col-span-10">{{ currentNews?.detailsTitle ? (currentNews?.detailsTitle | translate) : (currentNews?.title | translate) }}</span>
         <div class="flex items-center gap-4 col-span-12 lg:col-span-2 lg:justify-end" *ngIf="currentNews?.date as d">
           <img class="cursor-pointer" src="assets/images/icons/CalendarBlank.svg" alt="">
-          <p>{{ d | date:'d MMM, y' }}</p>
+          <p>{{ d | date:'d MMM, y':'':dateLocale }}</p>
         </div>
       </div>
     </div>
 
   </div>
 
-  @switch (newsId) {
+  @switch (newsId) {  
   @case ('1') {
   <app-armeez class="col-span-12"></app-armeez>
   }
@@ -71,7 +71,7 @@
           </div>
           <div class="text-sm text-extended-grey flex items-center gap-2 mt-auto">
             <img src="assets/images/news/CalendarBlank.svg" alt="calendar" class="w-4 h-4" />
-            <span>{{ item.date | date: 'd MMM, y' }}</span>
+            <span>{{ item.date | date: 'd MMM, y':'':dateLocale }}</span>
           </div>
         </div>
       </a>

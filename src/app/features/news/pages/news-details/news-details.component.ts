@@ -36,14 +36,18 @@ export default class NewsDetailsComponent implements OnInit {
   otherNews: NewsItem[] = [];
   currentNews: NewsItem | undefined;
   isRtl = false;
+  dateLocale: string = 'en';
 
   constructor() {
   }
   
   ngOnInit(): void {
-    this.isRtl = (this.translate.currentLang || localStorage.getItem('lang') || 'en') === 'ar';
+    const currentLanguage = this.translate.currentLang || localStorage.getItem('lang') || 'en';
+    this.isRtl = currentLanguage === 'ar';
+    this.dateLocale = currentLanguage;
     this.translate.onLangChange.subscribe((e) => {
       this.isRtl = e.lang === 'ar';
+      this.dateLocale = e.lang;
     });
     this.activatedRoute.paramMap.subscribe((params) => {
       this.newsId = params.get('id');

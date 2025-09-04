@@ -23,13 +23,17 @@ export class LatestNewsComponent implements OnInit {
   newsArticles: NewsItem[] = NEWS_LIST;
   private readonly translate = inject(TranslateService);
   isRtl = false;
+  dateLocale: string = 'en';
 
   mainNewsItem: NewsItem | null = null;
 
   ngOnInit(): void {
-    this.isRtl = (this.translate.currentLang || localStorage.getItem('lang') || 'en') === 'ar';
+    const currentLanguage = this.translate.currentLang || localStorage.getItem('lang') || 'en';
+    this.isRtl = currentLanguage === 'ar';
+    this.dateLocale = currentLanguage;
     this.translate.onLangChange.subscribe((e) => {
       this.isRtl = e.lang === 'ar';
+      this.dateLocale = e.lang;
     });
     this.onNewsClick(this.newsArticles[0], 0);
   }

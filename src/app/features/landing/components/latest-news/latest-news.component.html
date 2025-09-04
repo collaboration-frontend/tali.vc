@@ -27,7 +27,7 @@
             <div class="flex items-center justify-between w-full ">
               <div class="flex items-center gap-2">
                 <img src="assets/images/news/CalendarBlank.svg" alt="">
-                <span class="text-sm text-extended-grey"> {{mainNewsItem?.date | date:'d MMM, y' }}</span>
+                <span class="text-sm text-extended-grey"> {{mainNewsItem?.date | date:'d MMM, y':'':dateLocale }}</span>
               </div>
               <a class="flex items-center gap-2  duration-300" routerLink="/news/{{mainNewsItem?.id}}">
               </a>
@@ -80,7 +80,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <img src="assets/images/news/CalendarBlank.svg" alt="">
-                <span class="text-sm text-extended-grey">{{item?.date | date:'d MMM, y' }}</span>
+                <span class="text-sm text-extended-grey">{{item?.date | date:'d MMM, y':'':dateLocale }}</span>
               </div>
             </div>
 
