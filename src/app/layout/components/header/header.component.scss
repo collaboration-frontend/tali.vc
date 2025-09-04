@@ -38,3 +38,9 @@ nav a:hover {
     transform: rotate(180deg);
   }
 }
+
+@media (max-width: 1023px) {
+  #mobile-menu {
+    height: 100vh !important;
+  }
+}
