@@ -21,7 +21,7 @@ export const NEWS_LIST: NewsItem[] = [
     id: 3,
     title: "latestNews.items.northladder.title",
     description: "latestNews.items.northladder.description",
-    date: new Date("2025-05-1"),
+    date: new Date("2025-05-01"),
     category: "Investments",
     imageUrl: "assets/images/northladdernews.jpeg",
   },
