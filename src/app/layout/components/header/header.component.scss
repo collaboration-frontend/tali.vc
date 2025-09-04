@@ -14,6 +14,33 @@ nav a:hover {
   animation: slideDown 0.2s ease-out;
 }
 
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  margin-top: 0.5rem; // mt-2
+  width: 12rem; // w-48
+  background: #fff;
+  border: 1px solid #e5e7eb; // border-gray-200
+  border-radius: 0.5rem; // rounded-lg
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  right: 0px !important;
+
+  // For LTR (English)
+  [dir="ltr"] & {
+    left: 0;
+    right: auto;
+  }
+
+  // For RTL (Arabic)
+  [dir="rtl"] & {
+    right: 0;
+    left: auto;
+  }
+}
+
+// notworking
+
 @keyframes slideDown {
   from {
     opacity: 0;
