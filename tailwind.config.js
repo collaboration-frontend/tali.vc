@@ -2,7 +2,6 @@
 module.exports = {
   content: ["./src/**/*.{html,scss,ts}"],
   mode: "jit",
-  purge: ["./src/**/*.{html,ts,scss}"],
   theme: {
     container: {
       center: true,

@@ -1,17 +1,54 @@
-<nav class="fixed w-full z-50 border-b border-white/10 p-[11px] transition-colors duration-300" [ngClass]="isHomeRoute ? (isScrolled ? 'bg-primary-100/95' : 'bg-transparent') : 'bg-primary-100/95'">
+<nav class="fixed w-full z-50 border-b border-white/10 p-[11px] transition-colors duration-300" 
+     [ngClass]="isHomeRoute ? (isScrolled ? 'bg-primary-100/95' : 'bg-transparent') : 'bg-primary-100/95'"
+     role="navigation" 
+     aria-label="Main navigation">
   <div class="container">
     <div class="flex items-center justify-between">
       <div class="flex-shrink-0">
-        <img class="w-32 lg:w-52" src="assets/images/icons/logo.png" alt="Logo">
+        <img class="w-32 lg:w-52" 
+             src="assets/images/icons/logo.png" 
+             alt="Tali Ventures Company Logo"
+             [attr.aria-label]="'header.logo.alt' | translate">
       </div>
 
-      <div class="hidden lg:flex items-center gap-8 mx-auto justify-center flex-1">
-        <a href="#home" class="py-4 hover:text-white text-white/50 transition active-menu outline-none" (click)="scrollToSection('home', $event)">{{ 'header.nav.home' | translate }}</a>
-        <a href="#about" class="py-4 hover:text-white text-white/50 transition outline-none" (click)="scrollToSection('about', $event)">{{ 'header.nav.about' | translate }}</a>
-        <a href="#portfolio" class="py-4 hover:text-white text-white/50 transition outline-none" (click)="scrollToSection('portfolio', $event)">{{ 'header.nav.portfolio' | translate }}</a>
-        <!-- <a href="#team" class="py-4 hover:text-white text-white/50 transition outline-none" (click)="scrollToSection('team', $event)">{{ 'header.nav.team' | translate }}</a> -->
-        <a href="#news" class="py-4 hover:text-white text-white/50 transition outline-none" (click)="scrollToSection('news', $event)">{{ 'header.nav.news' | translate }}</a>
-        <a href="#contact" class="py-4 hover:text-white text-white/50 transition outline-none" (click)="scrollToSection('contact', $event)">{{ 'header.nav.contact' | translate }}</a>
+      <div class="hidden lg:flex items-center gap-8 mx-auto justify-center flex-1" 
+           role="menubar"
+           aria-label="Desktop navigation menu">
+        <a href="#home" 
+           class="py-4 hover:text-white text-white/50 transition active-menu focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" 
+           (click)="scrollToSection('home', $event)"
+           role="menuitem"
+           [attr.aria-label]="('header.nav.home' | translate) + ' section'">
+          {{ 'header.nav.home' | translate }}
+        </a>
+        <a href="#about" 
+           class="py-4 hover:text-white text-white/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" 
+           (click)="scrollToSection('about', $event)"
+           role="menuitem"
+           [attr.aria-label]="('header.nav.about' | translate) + ' section'">
+          {{ 'header.nav.about' | translate }}
+        </a>
+        <a href="#portfolio" 
+           class="py-4 hover:text-white text-white/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" 
+           (click)="scrollToSection('portfolio', $event)"
+           role="menuitem"
+           [attr.aria-label]="('header.nav.portfolio' | translate) + ' section'">
+          {{ 'header.nav.portfolio' | translate }}
+        </a>
+        <a href="#news" 
+           class="py-4 hover:text-white text-white/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" 
+           (click)="scrollToSection('news', $event)"
+           role="menuitem"
+           [attr.aria-label]="('header.nav.news' | translate) + ' section'">
+          {{ 'header.nav.news' | translate }}
+        </a>
+        <a href="#contact" 
+           class="py-4 hover:text-white text-white/50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent" 
+           (click)="scrollToSection('contact', $event)"
+           role="menuitem"
+           [attr.aria-label]="('header.nav.contact' | translate) + ' section'">
+          {{ 'header.nav.contact' | translate }}
+        </a>
       </div>
 
       <!-- Right side controls -->
@@ -19,40 +56,67 @@
         <!-- Language Selector -->
         <div class="relative">
           <button (click)="toggleLanguageDropdown()"
-            class="flex items-center space-x-1 hover:text-white transition-colors cursor-pointer gap-2"
-            [attr.aria-expanded]="isLanguageDropdownOpen" aria-label="Select language">
-            <img src="assets/icons/Global.svg" alt="Global" class="mb-1">
+            class="flex items-center space-x-1 hover:text-white transition-colors cursor-pointer gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-md p-2"
+            [attr.aria-expanded]="isLanguageDropdownOpen" 
+            [attr.aria-label]="'header.language.select' | translate"
+            aria-describedby="language-help"
+            aria-haspopup="true">
+            <img src="assets/icons/Global.svg" 
+                 alt="" 
+                 class="mb-1"
+                 aria-hidden="true">
             <span class="text-white/50 text-sm">{{ selectedLanguage.code.toUpperCase() }}</span>
-            <img src="assets/icons/arrow-bottom.svg" alt="arrow-down"
-              class="mt-[-2px] transition-transform duration-200" [class.rotate-180]="isLanguageDropdownOpen">
+            <img src="assets/icons/arrow-bottom.svg" 
+                 alt=""
+                 class="mt-[-2px] transition-transform duration-200" 
+                 [class.rotate-180]="isLanguageDropdownOpen"
+                 aria-hidden="true">
           </button>
+          <span id="language-help" class="sr-only">{{ 'header.language.help' | translate }}</span>
 
           <!-- Language Dropdown Menu -->
           <div *ngIf="isLanguageDropdownOpen"
-            class="language-dropdown absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+            class="language-dropdown absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+            role="menu"
+            aria-labelledby="language-selector"
+            [attr.aria-hidden]="!isLanguageDropdownOpen">
             <div *ngFor="let language of languages"
-              class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
-              [class.bg-gray-50]="selectedLanguage.code === language.code" (click)="selectLanguage(language)">
+              class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors focus-visible:bg-gray-50 focus:outline-none"
+              [class.bg-gray-50]="selectedLanguage.code === language.code" 
+              (click)="selectLanguage(language)"
+              (keydown.enter)="selectLanguage(language)"
+              (keydown.space)="selectLanguage(language)"
+              role="menuitem"
+              tabindex="0"
+              [attr.aria-selected]="selectedLanguage.code === language.code">
               <span class="text-gray-700">{{ language.name }}</span>
+              <span *ngIf="selectedLanguage.code === language.code" class="sr-only">{{ 'header.language.current' | translate }}</span>
             </div>
           </div>
         </div>
-
-        <!-- Apply Button -->
-        <!-- <button
-          class="bg-primary-500 text-white px-6 py-2 flex items-center transition-colors duration-700 hover:bg-[red]">
-          <span class="text-sm">Apply</span>
-          <img src="assets/icons/arrow-top.svg" alt="arrow-top">
-        </button> -->
       </div>
 
       <div class="lg:hidden">
-        <button type="button" class="text-white   p-2 " (click)="toggleMobileMenu()"
-          [attr.aria-expanded]="isMobileMenuOpen" aria-label="Toggle mobile menu" aria-controls="mobile-menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" [class.hidden]="isMobileMenuOpen">
+        <button type="button" 
+                class="text-white p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-md" 
+                (click)="toggleMobileMenu()"
+                [attr.aria-expanded]="isMobileMenuOpen" 
+                [attr.aria-label]="isMobileMenuOpen ? ('header.mobile.close' | translate) : ('header.mobile.open' | translate)" 
+                aria-controls="mobile-menu">
+          <svg class="w-6 h-6" 
+               fill="none" 
+               stroke="currentColor" 
+               viewBox="0 0 24 24" 
+               [class.hidden]="isMobileMenuOpen"
+               aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" [class.hidden]="!isMobileMenuOpen">
+          <svg class="w-6 h-6" 
+               fill="none" 
+               stroke="currentColor" 
+               viewBox="0 0 24 24" 
+               [class.hidden]="!isMobileMenuOpen"
+               aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
@@ -60,34 +124,77 @@
     </div>
   </div>
 
-  <div id="mobile-menu" class="lg:hidden overflow-hidden " [class.max-h-[400px]]="isMobileMenuOpen"
-    [class.max-h-0]="!isMobileMenuOpen">
-    <div class="px-2 pt-2 pb-3 space-y-1 bg-primary-100/95  mt-4  border-white/10 ">
-      <a href="#home" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item" (click)="scrollToSection('home', $event)">
+  <div id="mobile-menu" 
+       class="lg:hidden overflow-hidden" 
+       [class.max-h-[400px]]="isMobileMenuOpen"
+       [class.max-h-0]="!isMobileMenuOpen"
+       role="menu"
+       [attr.aria-hidden]="!isMobileMenuOpen"
+       aria-label="Mobile navigation menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-primary-100/95 mt-4 border-white/10">
+      <a href="#home" 
+         class="block px-3 py-3 text-white/50 font-medium mobile-menu-item focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md" 
+         (click)="scrollToSection('home', $event)"
+         role="menuitem"
+         tabindex="0"
+         [attr.aria-label]="('header.nav.home' | translate) + ' section'">
         {{ 'header.nav.home' | translate }}
       </a>
-      <a href="#about" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item" (click)="scrollToSection('about', $event)">
+      <a href="#about" 
+         class="block px-3 py-3 text-white/50 font-medium mobile-menu-item focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md" 
+         (click)="scrollToSection('about', $event)"
+         role="menuitem"
+         tabindex="0"
+         [attr.aria-label]="('header.nav.about' | translate) + ' section'">
         {{ 'header.nav.about' | translate }}
       </a>
-      <a href="#portfolio" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item" (click)="scrollToSection('portfolio', $event)">
+      <a href="#portfolio" 
+         class="block px-3 py-3 text-white/50 font-medium mobile-menu-item focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md" 
+         (click)="scrollToSection('portfolio', $event)"
+         role="menuitem"
+         tabindex="0"
+         [attr.aria-label]="('header.nav.portfolio' | translate) + ' section'">
         {{ 'header.nav.portfolio' | translate }}
       </a>
-      <a href="#team" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item" (click)="scrollToSection('team', $event)">
+      <a href="#team" 
+         class="block px-3 py-3 text-white/50 font-medium mobile-menu-item focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md" 
+         (click)="scrollToSection('team', $event)"
+         role="menuitem"
+         tabindex="0"
+         [attr.aria-label]="('header.nav.team' | translate) + ' section'">
         {{ 'header.nav.team' | translate }}
       </a>
-      <a href="#news" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item" (click)="scrollToSection('news', $event)">
+      <a href="#news" 
+         class="block px-3 py-3 text-white/50 font-medium mobile-menu-item focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md" 
+         (click)="scrollToSection('news', $event)"
+         role="menuitem"
+         tabindex="0"
+         [attr.aria-label]="('header.nav.news' | translate) + ' section'">
         {{ 'header.nav.news' | translate }}
       </a>
-      <a href="#contact" class="block px-3 py-3 text-white/50  font-medium mobile-menu-item" (click)="scrollToSection('contact', $event)">
+      <a href="#contact" 
+         class="block px-3 py-3 text-white/50 font-medium mobile-menu-item focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md" 
+         (click)="scrollToSection('contact', $event)"
+         role="menuitem"
+         tabindex="0"
+         [attr.aria-label]="('header.nav.contact' | translate) + ' section'">
         {{ 'header.nav.contact' | translate }}
-      </a> <!-- Mobile controls -->
+      </a>
+      
+      <!-- Mobile Language Controls -->
       <div class="border-t border-white/10 pt-3 mt-3">
         <div class="flex items-center justify-between px-3 py-2">
           <div class="relative">
             <button (click)="toggleLanguageDropdown()"
-              class="flex items-center space-x-2 hover:text-white transition-colors cursor-pointer"
-              [attr.aria-expanded]="isLanguageDropdownOpen" aria-label="Select language">
-              <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="flex items-center space-x-2 hover:text-white transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-100 rounded-md p-2"
+              [attr.aria-expanded]="isLanguageDropdownOpen" 
+              [attr.aria-label]="'header.language.select' | translate"
+              aria-haspopup="true">
+              <svg class="w-5 h-5 text-white/70" 
+                   fill="none" 
+                   stroke="currentColor" 
+                   viewBox="0 0 24 24"
+                   aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                 </path>
@@ -97,13 +204,23 @@
 
             <!-- Mobile Language Dropdown Menu -->
             <div *ngIf="isLanguageDropdownOpen"
-              class="language-dropdown absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+              class="language-dropdown absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+              role="menu"
+              aria-labelledby="mobile-language-selector"
+              [attr.aria-hidden]="!isLanguageDropdownOpen">
               <div *ngFor="let language of languages"
-                class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors"
-                [class.bg-gray-50]="selectedLanguage.code === language.code" (click)="selectLanguage(language)">
+                class="language-option flex items-center space-x-3 px-4 py-2 hover:bg-gray-50 cursor-pointer transition-colors focus:outline-none focus-visible:bg-gray-50"
+                [class.bg-gray-50]="selectedLanguage.code === language.code" 
+                (click)="selectLanguage(language)"
+                (keydown.enter)="selectLanguage(language)"
+                (keydown.space)="selectLanguage(language)"
+                role="menuitem"
+                tabindex="0"
+                [attr.aria-selected]="selectedLanguage.code === language.code">
                 <span class="text-lg">{{ language.flag }}</span>
                 <span class="text-gray-700">{{ language.name }}</span>
                 <span class="text-gray-500 text-sm">{{ language.code.toUpperCase() }}</span>
+                <span *ngIf="selectedLanguage.code === language.code" class="sr-only">{{ 'header.language.current' | translate }}</span>
               </div>
             </div>
           </div>
@@ -125,9 +242,9 @@
         </div>
         <div class="px-3 py-2">
           <button
-            class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center space-x-2">
+            class="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2">
             <span>{{ 'header.actions.apply' | translate }}</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>

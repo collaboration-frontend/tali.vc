@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { DatePipe, NgFor, NgClass } from '@angular/common';
+import { DatePipe, NgFor, NgClass, NgOptimizedImage } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router, RouterLink } from "@angular/router";
 import { NewsItem } from '@news/model/news.model';
@@ -11,6 +11,7 @@ import { NEWS_LIST } from '@news/constant/news.constant';
   imports: [
     NgFor,
     NgClass,
+    NgOptimizedImage,
     TranslateModule,
     RouterLink,
     DatePipe

@@ -1,20 +1,48 @@
-<div
+<article
   class="bg-white border border-natural-1000 shadow-sm hover:shadow-lg transition-shadow duration-200 flex flex-col gap-7 p-5"
-  style="min-height:-webkit-fill-available;">
-  <img class="w-44 h-20 " [src]="item.imageUrl || 'assets/images/portfolio-image.png'" [alt]="item.title">
+  style="min-height:-webkit-fill-available;"
+  role="article"
+  [attr.aria-labelledby]="'portfolio-title-' + item.id"
+  [attr.aria-describedby]="'portfolio-desc-' + item.id + ' portfolio-meta-' + item.id">
+  <div class="image-container" role="img" [attr.aria-label]="item.title + ' company logo'">
+    <img ngSrc="{{item.imageUrl || 'assets/images/portfolio-image.png'}}" 
+      [alt]="item.title + ' company logo'"
+      fill
+      loading="lazy"
+      class="object-contain">
+  </div>
   <div class="flex flex-col gap-8">
     <div class="flex items-center gap-2">
-      <span class="text-2xl font-medium text-extended-black">{{ item.title }}</span>
-      <span class="text-gray-600 bg-[#f3f3f333] border border-natural-1000 py-2 px-4">{{ item.sector | translate
-        }}</span>
+      <h3 [id]="'portfolio-title-' + item.id" 
+          class="text-2xl font-medium text-extended-black"
+          role="heading"
+          aria-level="3">
+        {{ item.title }}
+      </h3>
+      <span class="text-gray-600 bg-[#f3f3f333] border border-natural-1000 py-2 px-4"
+            [attr.aria-label]="('portfolio.accessibility.sector' | translate) + ': ' + (item.sector | translate)">
+        {{ item.sector | translate }}
+      </span>
     </div>
-    <span class="text-sm font-normal text-extended-grey line-clamp-3">{{ item.description | translate }}</span>
+    <p [id]="'portfolio-desc-' + item.id" 
+       class="text-sm font-normal text-extended-grey line-clamp-3">
+      {{ item.description | translate }}
+    </p>
   </div>
-  <div class="flex items-center">
-    <a href="{{ item.website }}" target="_blank"
-      class="border border-natural-1000 flex items-center gap-2 p-2 text-sm text-primary-100 font-medium">
-      <img src="assets/images/icons/website-icon.svg" alt="">
+  <div class="flex items-center" 
+       [id]="'portfolio-meta-' + item.id">
+    <a [href]="item.website" 
+       target="_blank"
+       rel="noopener noreferrer"
+       class="border border-natural-1000 flex items-center gap-2 p-2 text-sm text-primary-100 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 focus-visible:ring-offset-2"
+       [attr.aria-label]="('portfolio.accessibility.visitWebsite' | translate) + ' ' + item.title + ' (' + item.website + ')'">
+      <img src="assets/images/icons/website-icon.svg" 
+           alt=""
+           aria-hidden="true">
       {{ 'portfolio.website' | translate }}
     </a>
+    <span class="sr-only">
+      {{ 'portfolio.accessibility.investmentYear' | translate }}: {{ item.investmentYear }}
+    </span>
   </div>
-</div>
+</article>

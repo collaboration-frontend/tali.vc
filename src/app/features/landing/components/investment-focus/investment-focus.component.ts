@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { InvestmentFocusItemCardComponent } from './item-card/item-card.component';
 import { InvestmentFocusPreviewItemCardComponent } from './preview-item-card/preview-item-card.component';
@@ -15,7 +15,7 @@ interface FocusArea {
 @Component({
   selector: 'app-investment-focus',
   standalone: true,
-  imports: [CommonModule, InvestmentFocusItemCardComponent, InvestmentFocusPreviewItemCardComponent, TranslateModule],
+  imports: [CommonModule, NgOptimizedImage, InvestmentFocusItemCardComponent, InvestmentFocusPreviewItemCardComponent, TranslateModule],
   templateUrl: './investment-focus.component.html',
   styleUrls: ['./investment-focus.component.scss']
 })

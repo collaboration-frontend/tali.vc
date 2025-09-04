@@ -1,7 +1,10 @@
+// Import SCSS files first
 @use "./assets/styles/styles.scss";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+
+// Import Tailwind CSS
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
 
 body {
   background-color: #fcfbfc !important;

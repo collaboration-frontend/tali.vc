@@ -10,6 +10,19 @@
     },
     "actions": {
       "apply": "Apply"
+    },
+    "language": {
+      "select": "Select language",
+      "help": "Choose your preferred language",
+      "current": "(current)",
+      "changed": "Language changed to"
+    },
+    "mobile": {
+      "open": "Open mobile menu",
+      "close": "Close mobile menu"
+    },
+    "logo": {
+      "alt": "Tali Ventures Company Logo"
     }
   },
   "footer": {
@@ -26,12 +39,22 @@
     }
   },
   "about": {
-    "intro": "tali ventures complements stc group's efforts as an engine of growth and invest in startups across various fields of technologies that align with stc group's innovation agenda."
+    "title": "About Tali Ventures",
+    "intro": "tali ventures complements stc group's efforts as an engine of growth and invest in startups across various fields of technologies that align with stc group's innovation agenda.",
+    "image": {
+      "alt": "Tali Ventures team collaboration and innovation"
+    }
   },
   "latestNews": {
     "title": "Latest news",
     "subtitle": "Highlights of Our Latest Investments.",
     "viewNews": "View News",
+    "accessibility": {
+      "featuredImage": "Featured news image",
+      "thumbnailImage": "News thumbnail image",
+      "publishDate": "Published on",
+      "newsList": "List of latest news articles"
+    },
     "items": {
       "tarmeez": {
         "title": " stc group’s Tali Ventures leads a strategic Investment in Tarmeez Capital",
@@ -88,6 +111,13 @@
   "investmentFocus": {
     "title": "Investment Focus",
     "subtitle": "Catalyze technological transformation through pioneering. Strategic investments for a better tomorrow.",
+    "accessibility": {
+      "areasGrid": "Investment focus areas selection grid",
+      "selectArea": "Select",
+      "focusArea": "focus area",
+      "defaultImage": "Investment focus illustration",
+      "approachTitle": "Our Investment Approach"
+    },
     "areas": {
       "fintech": "FinTech",
       "itServices": "IT services",
@@ -120,6 +150,13 @@
     "title": "Portfolio",
     "subtitle": "Investments That Shape the Future.",
     "website": "Website",
+    "accessibility": {
+      "description": "List of companies in our investment portfolio",
+      "companyCard": "Portfolio company details",
+      "sector": "Sector",
+      "investmentYear": "Investment year",
+      "visitWebsite": "Visit company website"
+    },
     "items": {
       "nile": {
         "description": "Providing network independence through a very simple system; It was designed from the beginning to take care of itself, prevent threats, and improve productivity and convenience for customers."
@@ -152,6 +189,13 @@
     "every": "everything’s going",
     "forward": "forward!",
     "title": "let's work together",
+    "accessibility": {
+      "socialMedia": "Follow us on social media",
+      "linkedin": "LinkedIn profile",
+      "facebook": "Facebook page",
+      "twitter": "Twitter account",
+      "emailContact": "Send email to Tali Ventures"
+    },
     "form": {
       "title": "Fill out this form",
       "name": {

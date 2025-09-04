@@ -1,7 +1,8 @@
-import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
-import { NavigationEnd, Router, RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { AccessibilityService } from "../../../core/services/accessibility.service";
 
 interface Language {
   code: string;
@@ -12,7 +13,7 @@ interface Language {
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [CommonModule, TranslateModule, RouterLink],
+  imports: [CommonModule, TranslateModule],
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
 })
@@ -28,25 +29,25 @@ export class HeaderComponent implements OnInit {
   ];
 
   selectedLanguage: Language = this.languages[0];
+  private focusedIndex = -1;
+  private menuItems: HTMLElement[] = [];
 
   constructor(
-    private elementRef: ElementRef,
-    private translate: TranslateService,
-    private router: Router
+    private elementRef: ElementRef, 
+    private translate: TranslateService, 
+    private router: Router,
+    private accessibilityService: AccessibilityService
   ) {}
 
   ngOnInit(): void {
     // Close mobile menu on route change or page refresh
     this.closeMobileMenu();
     const savedLanguageCode = localStorage.getItem("lang") || "en";
-    const detectedLanguage =
-      this.languages.find((l) => l.code === savedLanguageCode) ||
-      this.languages[0];
+    const detectedLanguage = this.languages.find((l) => l.code === savedLanguageCode) || this.languages[0];
     this.selectedLanguage = detectedLanguage;
     this.translate.setDefaultLang("en");
     this.translate.use(detectedLanguage.code);
-    document.documentElement.dir =
-      detectedLanguage.code === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = detectedLanguage.code === "ar" ? "rtl" : "ltr";
     // Initialize scrolled state on load
     this.isScrolled = window.scrollY > 10;
 
@@ -129,6 +130,59 @@ export class HeaderComponent implements OnInit {
     localStorage.setItem("lang", language.code);
     document.documentElement.dir = language.code === "ar" ? "rtl" : "ltr";
     this.closeLanguageDropdown();
+    
+    // Announce language change to screen readers
+    this.accessibilityService.announceToScreenReader(
+      `Language changed to ${language.name}`
+    );
+  }
+
+  onLanguageKeydown(event: KeyboardEvent, language: Language): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.selectLanguage(language);
+    } else if (event.key === 'Escape') {
+      this.closeLanguageDropdown();
+      // Return focus to language button
+      const languageButton = this.elementRef.nativeElement.querySelector('[aria-haspopup="true"]');
+      if (languageButton) {
+        languageButton.focus();
+      }
+    }
+  }
+
+  onMobileMenuKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.closeMobileMenu();
+      // Return focus to menu button
+      const menuButton = this.elementRef.nativeElement.querySelector('[aria-controls="mobile-menu"]');
+      if (menuButton) {
+        menuButton.focus();
+      }
+    }
+  }
+
+  onNavigationKeydown(event: KeyboardEvent, targetElement: HTMLElement): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      targetElement.click();
+    }
+  }
+
+  private updateFocusIndex(direction: 'next' | 'previous'): void {
+    const menuItems = Array.from(
+      this.elementRef.nativeElement.querySelectorAll('[role="menuitem"]')
+    ) as HTMLElement[];
+
+    if (menuItems.length === 0) return;
+
+    if (direction === 'next') {
+      this.focusedIndex = (this.focusedIndex + 1) % menuItems.length;
+    } else {
+      this.focusedIndex = this.focusedIndex <= 0 ? menuItems.length - 1 : this.focusedIndex - 1;
+    }
+
+    menuItems[this.focusedIndex]?.focus();
   }
 
   scrollToSection(sectionId: string, event?: Event): void {

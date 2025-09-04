@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 lib-muk-nav-tabs {
   .mat-mdc-tab-link-container {

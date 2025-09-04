@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 export interface PortfolioItem {
+  id: string;
   title: string;
   description: string;
   sector: string;
@@ -14,6 +16,7 @@ export interface PortfolioItem {
   selector: 'app-portfolio-item-card',
   standalone: true,
   imports: [
+    NgOptimizedImage,
     TranslateModule
   ],
   templateUrl: './item-card.component.html',

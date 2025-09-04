@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { NgFor } from "@angular/common";
 import { PortfolioItemCardComponent } from "./item-card/item-card.component";
 import { TranslateModule } from "@ngx-translate/core";
+import { AccessibilityService } from "../../../../core/services/accessibility.service";
 
 @Component({
   selector: "app-portfolio",
@@ -11,8 +12,11 @@ import { TranslateModule } from "@ngx-translate/core";
   styleUrls: ["./portfolio.component.scss"],
 })
 export class PortfolioComponent {
+  private accessibilityService = inject(AccessibilityService);
+
   portfolioItems: any[] = [
     {
+      id: 'tarmeez',
       title: "Tarmeez",
       description: "portfolio.items.tarmeez.description",
       sector: "investmentFocus.areas.fintech",
@@ -21,6 +25,7 @@ export class PortfolioComponent {
       website: "https://tarmeez.co",
     },
     {
+      id: 'graphiant',
       title: "Graphiant",
       description: "portfolio.items.graphiant.description",
       sector: "investmentFocus.areas.network",
@@ -29,6 +34,7 @@ export class PortfolioComponent {
       website: "https://www.graphiant.com",
     },
     {
+      id: 'nile',
       title: "Nile",
       description: "portfolio.items.nile.description",
       sector: "investmentFocus.areas.itServices",
@@ -37,6 +43,7 @@ export class PortfolioComponent {
       website: "https://nilesecure.com",
     },
     {
+      id: 'rewaa',
       title: "Rewaa",
       description: "portfolio.items.rewaa.description",
       sector: "investmentFocus.areas.cloud",
@@ -45,6 +52,7 @@ export class PortfolioComponent {
       website: "https://www.rewaatech.com",
     },
     {
+      id: 'nearpay',
       title: "NearPay",
       description: "portfolio.items.nearpay.description",
       sector: "investmentFocus.areas.fintech",
@@ -53,6 +61,7 @@ export class PortfolioComponent {
       website: "https://www.nearpay.io",
     },
     {
+      id: 'celona',
       title: "Celona",
       description: "portfolio.items.celona.description",
       sector: "investmentFocus.areas.itServices",
@@ -61,6 +70,7 @@ export class PortfolioComponent {
       website: "https://www.celona.io",
     },
     {
+      id: 'northladder',
       title: "Northladder",
       description: "portfolio.items.northladder.description",
       sector: "investmentFocus.areas.itServices",
@@ -69,6 +79,7 @@ export class PortfolioComponent {
       website: "https://www.northladder.com",
     },
     {
+      id: 'cohere',
       title: "Cohere",
       description: "portfolio.items.cohere.description",
       sector: "investmentFocus.areas.ai",
@@ -77,4 +88,14 @@ export class PortfolioComponent {
       website: "https://cohere.com",
     },
   ];
+
+  trackByPortfolioItem(index: number, item: any): string {
+    return item.id || item.title || index.toString();
+  }
+
+  onPortfolioItemFocus(item: any): void {
+    this.accessibilityService.announceToScreenReader(
+      `Portfolio company: ${item.title}, sector: ${item.sector}, invested in ${item.investmentYear}`
+    );
+  }
 }

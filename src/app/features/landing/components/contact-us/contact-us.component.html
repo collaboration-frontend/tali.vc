@@ -1,70 +1,138 @@
-<div id="contact" class="container">
-  <div *ngIf="false" class="grid grid-cols-12 gap-4  py-10">
+<section id="contact" 
+         class="container"
+         role="region"
+         aria-labelledby="contact-heading">
+  <div *ngIf="false" class="grid grid-cols-12 gap-4 py-10">
     <div class="col-span-12 lg:col-span-5">
       <div class="flex flex-col items-start gap-4">
-        <span class=" text-base text-primary-100  font-normal">{{ 'contactUs.badge' | translate }}</span>
-        <p class="text-[#1C1B21] text-4xl leading-10 font-medium">{{ 'contactUs.title' | translate }}</p>
+        <span class="text-base text-primary-100 font-normal">{{ 'contactUs.badge' | translate }}</span>
+        <h2 id="contact-heading"
+            class="text-[#1C1B21] text-4xl leading-10 font-medium"
+            role="heading"
+            aria-level="2">
+          {{ 'contactUs.title' | translate }}
+        </h2>
       </div>
-      <div class="flex items-center gap-4 mt-6">
-        <img src="assets/icons/linkedin-solid.svg" alt="contact">
-        <img src="assets/icons/facebook.soild.svg" alt="contact">
-        <img src="assets/icons/twitter-soild.svg" alt="contact">
+      <div class="flex items-center gap-4 mt-6"
+           role="list"
+           [attr.aria-label]="'contactUs.accessibility.socialMedia' | translate">
+        <a href="#" 
+           class="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 focus-visible:ring-offset-2"
+           [attr.aria-label]="'contactUs.accessibility.linkedin' | translate">
+          <img src="assets/icons/linkedin-solid.svg" 
+               alt="{{ 'contactUs.accessibility.linkedin' | translate }}"
+               role="img">
+        </a>
+        <a href="#"
+           class="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 focus-visible:ring-offset-2"
+           [attr.aria-label]="'contactUs.accessibility.facebook' | translate">
+          <img src="assets/icons/facebook.soild.svg" 
+               alt="{{ 'contactUs.accessibility.facebook' | translate }}"
+               role="img">
+        </a>
+        <a href="#"
+           class="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 focus-visible:ring-offset-2"
+           [attr.aria-label]="'contactUs.accessibility.twitter' | translate">
+          <img src="assets/icons/twitter-soild.svg" 
+               alt="{{ 'contactUs.accessibility.twitter' | translate }}"
+               role="img">
+        </a>
       </div>
     </div>
     <div class="col-span-12 lg:col-span-7">
-      <form class="example-form bg-natural-100 p-6 grid grid-cols-12 items-center gap-4  ">
+      <form class="example-form bg-natural-100 p-6 grid grid-cols-12 items-center gap-4"
+            role="form"
+            aria-labelledby="contact-form-title">
         <div class="col-span-12">
-          <span class="text-[#1C1B21] text-xl leading-9 font-medium">{{ 'contactUs.form.title' | translate }}</span>
+          <h3 id="contact-form-title"
+              class="text-[#1C1B21] text-xl leading-9 font-medium"
+              role="heading"
+              aria-level="3">
+            {{ 'contactUs.form.title' | translate }}
+          </h3>
         </div>
         <div class="flex flex-col gap-8 col-span-12 lg:col-span-6">
-          <label class="text-[#939EA2] text-sm font-medium">{{ 'contactUs.form.name.label' | translate }}</label>
+          <label for="contact-name"
+                 class="text-[#939EA2] text-sm font-medium">
+            {{ 'contactUs.form.name.label' | translate }}
+          </label>
           <mat-form-field class="example-full-width input-form">
-            <input matInput [placeholder]="('contactUs.form.name.placeholder' | translate)">
+            <input matInput 
+                   id="contact-name"
+                   [placeholder]="('contactUs.form.name.placeholder' | translate)"
+                   [attr.aria-label]="'contactUs.form.name.label' | translate"
+                   required>
           </mat-form-field>
         </div>
         <div class="flex flex-col gap-8 col-span-12 lg:col-span-6">
-          <label class="text-[#939EA2] text-sm font-medium">{{ 'contactUs.form.email.label' | translate }}</label>
+          <label for="contact-email"
+                 class="text-[#939EA2] text-sm font-medium">
+            {{ 'contactUs.form.email.label' | translate }}
+          </label>
           <mat-form-field class="example-full-width input-form">
-            <input matInput [placeholder]="('contactUs.form.email.placeholder' | translate)">
+            <input matInput 
+                   id="contact-email"
+                   type="email"
+                   [placeholder]="('contactUs.form.email.placeholder' | translate)"
+                   [attr.aria-label]="'contactUs.form.email.label' | translate"
+                   required>
           </mat-form-field>
         </div>
-        <div class="flex flex-col gap-8 col-span-12 my-6 ">
-          <label class="text-[#939EA2] text-sm font-medium">{{ 'contactUs.form.message.label' | translate }}</label>
+        <div class="flex flex-col gap-8 col-span-12 my-6">
+          <label for="contact-message"
+                 class="text-[#939EA2] text-sm font-medium">
+            {{ 'contactUs.form.message.label' | translate }}
+          </label>
           <mat-form-field class="example-full-width input-form-textarea">
-            <textarea matInput [placeholder]="('contactUs.form.message.placeholder' | translate)"></textarea>
+            <textarea matInput 
+                      id="contact-message"
+                      [placeholder]="('contactUs.form.message.placeholder' | translate)"
+                      [attr.aria-label]="'contactUs.form.message.label' | translate"
+                      required></textarea>
           </mat-form-field>
-
         </div>
         <div class="col-span-12 lg:col-span-2">
-          <button class="bg-primary-500 text-white p-4 w-full transition-colors duration-700 hover:bg-[red] ">{{
-            'contactUs.form.submit' | translate }}</button>
+          <button type="submit"
+                  class="bg-primary-500 text-white p-4 w-full transition-colors duration-700 hover:bg-[red] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 focus-visible:ring-offset-2"
+                  [attr.aria-label]="'contactUs.form.submit' | translate">
+            {{ 'contactUs.form.submit' | translate }}
+          </button>
         </div>
       </form>
     </div>
   </div>
+</section>
 
-</div>
-<div class="grid grid-cols-12 gap-4  pt-10">
-  <div class="col-span-12 ">
-    <div class="banner-background ">
-      <div class="container">
-        <div class=" flex flex-col justify-end lg:pb-[10rem] pb-8 lg:gap-9 gap-4 relative top-8">
+<section class="grid grid-cols-12 gap-4 pt-10"
+         role="region"
+         aria-labelledby="contact-info-heading">
+  <div class="col-span-12">
+    <div class="contact-section-container">
+      <div class="container relative z-10">
+        <div class="flex flex-col justify-end lg:pb-[10rem] pb-8 lg:gap-9 gap-4 relative top-8">
           <div class="flex flex-col gap-4 lg:mt-24">
-            <h1 class="text-2xl md:text-7xl font-medium text-white tracking-wide">
+            <h2 id="contact-info-heading"
+                class="text-2xl md:text-7xl font-medium text-white tracking-wide"
+                role="heading"
+                aria-level="2">
               {{ 'contactUs.every' | translate }} <br class="block md:hidden" />
               <span class="block">{{ 'contactUs.forward' | translate }}</span>
-            </h1>
-            <p class="md:text-lg text-sm text-primary-500 pb-4 flex flex-col gap-1 w-full max-w-full">
-              {{ 'contactUs.badge' | translate }}
-              <span class="text-natural-50">
-                <a href="mailto:talivc@stc.com.sa" class=" transition-colors">talivc&#64;stc.com.sa</a>
-              </span>
-            </p>
+            </h2>
+            <div class="md:text-lg text-sm text-primary-500 pb-4 flex flex-col gap-1 w-full max-w-full"
+                 role="group"
+                 aria-labelledby="contact-info-heading">
+              <p>{{ 'contactUs.badge' | translate }}</p>
+              <p class="text-natural-50">
+                <a href="mailto:talivc@stc.com.sa" 
+                   class="transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-100 focus-visible:ring-offset-2"
+                   [attr.aria-label]="'contactUs.accessibility.emailContact' | translate">
+                  talivc&#64;stc.com.sa
+                </a>
+              </p>
+            </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </div>
-</div>
+</section>

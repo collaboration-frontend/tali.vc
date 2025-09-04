@@ -1,19 +1,36 @@
-<section id="portfolio" class="container py-10">
+<section id="portfolio" 
+         class="container py-10"
+         role="region"
+         aria-labelledby="portfolio-heading">
   <div class="grid grid-cols-12 gap-4">
     <div class="col-span-12">
       <div class="flex justify-between items-center mb-4">
         <div class="flex flex-col gap-4">
-          <span class="md:text-4xl text-2xl font-medium text-extended-black">{{ 'portfolio.title' | translate }}</span>
-          <p class="text-extended-grey text-base font-normal">{{ 'portfolio.subtitle' | translate }}</p>
+          <h2 id="portfolio-heading" 
+              class="md:text-4xl text-2xl font-medium text-extended-black"
+              role="heading"
+              aria-level="2">
+            {{ 'portfolio.title' | translate }}
+          </h2>
+          <p class="text-extended-grey text-base font-normal"
+             aria-describedby="portfolio-description">
+            {{ 'portfolio.subtitle' | translate }}
+          </p>
+          <span id="portfolio-description" class="sr-only">
+            {{ 'portfolio.accessibility.description' | translate }}
+          </span>
         </div>
-        <!-- <a class="text-primary-100 text-sm font-medium" href="#">
-            Display All
-          </a> -->
       </div>
     </div>
-    <app-portfolio-item-card 
-      *ngFor="let item of portfolioItems" 
-      [item]="item"
-      class="col-span-12 lg:col-span-4" />
+    <div class="col-span-12 lg:col-span-4" 
+         *ngFor="let item of portfolioItems; let i = index; trackBy: trackByPortfolioItem"
+         role="article"
+         [attr.aria-labelledby]="'portfolio-item-title-' + i"
+         [attr.aria-describedby]="'portfolio-item-desc-' + i">
+      <app-portfolio-item-card 
+        [item]="item"
+        (focus)="onPortfolioItemFocus(item)"
+        [attr.id]="'portfolio-item-' + i" />
+    </div>
   </div>
 </section>
