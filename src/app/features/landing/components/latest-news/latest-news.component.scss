@@ -25,12 +25,12 @@
 }
 
 .scrollbar-item {
-  max-height: 710px; //
+  max-height: 700px; //
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aaa transparent; //
 
-  // للـ Webkit (Chrome, Edge, Safari)
+
   &::-webkit-scrollbar {
     width: 6px;
   }
