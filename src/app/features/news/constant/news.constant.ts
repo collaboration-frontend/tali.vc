@@ -15,7 +15,7 @@ export const NEWS_LIST: NewsItem[] = [
     description: "latestNews.items.graphiant.description",
     date: new Date("2024-01-15"),
     category: "Investments",
-    imageUrl: "assets/images/graphiantnews.png",
+    imageUrl: "assets/images/gnews.png",
   },
   {
     id: 3,
