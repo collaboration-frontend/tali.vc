@@ -27,12 +27,12 @@
 .scrollbar-item {
   max-height: 700px; //
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: #aaa transparent; //
 
 
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
