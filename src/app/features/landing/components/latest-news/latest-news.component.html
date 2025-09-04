@@ -18,13 +18,13 @@
             <img class="w-full h-full object-contain transition-all duration-500 ease-out transform hover:scale-[1.01]"
               [src]="mainNewsItem?.imageUrl" alt="news-1">
           </div>
-          <div class="p-4">
+          <div class="flex flex-col gap-4 p-4">
             <div class="text-2xl font-medium mb-2 line-clamp-2">{{mainNewsItem?.title | translate}}</div>
-            <div class="lg:text-base text-sm text-grey-200 mb-2">
+            <div class="lg:text-sm text-sm text-grey-200 mb-1">
               {{mainNewsItem?.description | translate}}
             </div>
 
-            <div class="flex items-center justify-between w-full mt-4">
+            <div class="flex items-center justify-between w-full ">
               <div class="flex items-center gap-2">
                 <img src="assets/images/news/CalendarBlank.svg" alt="">
                 <span class="text-sm text-extended-grey"> {{mainNewsItem?.date | date:'d MMM, y' }}</span>
