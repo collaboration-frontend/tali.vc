@@ -25,10 +25,10 @@
 }
 
 .scrollbar-item {
-  max-height: 700px; // اضبط القيمة حسب ارتفاع البوكس عندك
+  max-height: 710px; //
   overflow-y: auto;
-  scrollbar-width: thin; // للـ Firefox
-  scrollbar-color: #aaa transparent; // لون السكرول
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent; //
 
   // للـ Webkit (Chrome, Edge, Safari)
   &::-webkit-scrollbar {
