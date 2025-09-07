@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { DatePipe, NgFor, NgClass } from '@angular/common';
+import { Component, inject, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { DatePipe, NgFor, NgClass, isPlatformBrowser } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router, RouterLink } from "@angular/router";
 import { NewsItem } from '@news/model/news.model';
@@ -27,8 +27,18 @@ export class LatestNewsComponent implements OnInit {
 
   mainNewsItem: NewsItem | null = null;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngOnInit(): void {
-    const currentLanguage = this.translate.currentLang || localStorage.getItem('lang') || 'en';
+    // Only access localStorage if running in browser
+    let currentLanguage = 'en';
+    if (isPlatformBrowser(this.platformId)) {
+      currentLanguage = this.translate.currentLang || localStorage.getItem('lang') || 'en';
+    } else {
+      // On server, use translate service current language or default
+      currentLanguage = this.translate.currentLang || 'en';
+    }
+    
     this.isRtl = currentLanguage === 'ar';
     this.dateLocale = currentLanguage;
     this.translate.onLangChange.subscribe((e) => {

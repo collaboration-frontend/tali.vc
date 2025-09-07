@@ -5,6 +5,7 @@ import { TranslateLoader, TranslateModule, TranslationObject } from '@ngx-transl
 import { Observable } from 'rxjs';
 
 import { routes } from './app.routes';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 class AssetTranslateLoader implements TranslateLoader {
   constructor(private httpClient: HttpClient) {}
@@ -39,6 +40,6 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    )
+    ), provideClientHydration(withEventReplay())
   ]
 };

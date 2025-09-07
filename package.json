@@ -6,8 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --output-hashing none",
+    "build:ssr": "ng build --configuration production",
+    "build:ssr:dev": "ng build --configuration development",
+    "serve:ssr": "node dist/new-tali/server/server.mjs",
+    "serve:ssr:dev": "ng build --configuration development && npm run serve:ssr",
+    "prerender": "ng run new-tali:prerender",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:new-tali": "node dist/new-tali/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -20,9 +26,12 @@
     "@angular/material": "^19.2.19",
     "@angular/platform-browser": "^19.2.14",
     "@angular/platform-browser-dynamic": "^19.2.14",
+    "@angular/platform-server": "^19.2.14",
     "@angular/router": "^19.2.14",
+    "@angular/ssr": "^19.2.15",
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
+    "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.1"
@@ -31,7 +40,9 @@
     "@angular-devkit/build-angular": "^19.2.15",
     "@angular/cli": "~19.2.15",
     "@angular/compiler-cli": "^19.2.14",
+    "@types/express": "^4.17.17",
     "@types/jasmine": "~4.3.0",
+    "@types/node": "^18.18.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

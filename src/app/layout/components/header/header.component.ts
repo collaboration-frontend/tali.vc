@@ -1,6 +1,6 @@
-import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
+import { Component, ElementRef, HostListener, OnInit, Inject, PLATFORM_ID } from "@angular/core";
 import { NavigationEnd, Router, RouterLink } from "@angular/router";
-import { CommonModule } from "@angular/common";
+import { CommonModule, isPlatformBrowser } from "@angular/common";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
 interface Language {
@@ -32,23 +32,38 @@ export class HeaderComponent implements OnInit {
   constructor(
     private elementRef: ElementRef,
     private translate: TranslateService,
-    private router: Router
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
     // Close mobile menu on route change or page refresh
     this.closeMobileMenu();
-    const savedLanguageCode = localStorage.getItem("lang") || "en";
-    const detectedLanguage =
-      this.languages.find((l) => l.code === savedLanguageCode) ||
-      this.languages[0];
-    this.selectedLanguage = detectedLanguage;
-    this.translate.setDefaultLang("en");
-    this.translate.use(detectedLanguage.code);
-    document.documentElement.dir =
-      detectedLanguage.code === "ar" ? "rtl" : "ltr";
-    // Initialize scrolled state on load
-    this.isScrolled = window.scrollY > 10;
+    
+    // Only access browser APIs if running in browser
+    if (isPlatformBrowser(this.platformId)) {
+      const savedLanguageCode = localStorage.getItem("lang") || "en";
+      const detectedLanguage =
+        this.languages.find((l) => l.code === savedLanguageCode) ||
+        this.languages[0];
+      this.selectedLanguage = detectedLanguage;
+      this.translate.setDefaultLang("en");
+      this.translate.use(detectedLanguage.code);
+      document.documentElement.dir =
+        detectedLanguage.code === "ar" ? "rtl" : "ltr";
+    } else {
+      // Server-side: use default language
+      this.selectedLanguage = this.languages[0];
+      this.translate.setDefaultLang("en");
+      this.translate.use("en");
+    }
+    
+    // Initialize scrolled state on load (only in browser)
+    if (isPlatformBrowser(this.platformId)) {
+      this.isScrolled = window.scrollY > 10;
+    } else {
+      this.isScrolled = false;
+    }
 
     // Initialize route state and subscribe to route changes
     this.updateRouteState(this.router.url);
@@ -75,8 +90,8 @@ export class HeaderComponent implements OnInit {
 
   @HostListener("window:resize", ["$event"])
   onResize(): void {
-    // Close mobile menu on screen resize to desktop
-    if (window.innerWidth >= 1024) {
+    // Close mobile menu on screen resize to desktop (browser only)
+    if (isPlatformBrowser(this.platformId) && window.innerWidth >= 1024) {
       this.closeMobileMenu();
     }
   }
@@ -91,24 +106,30 @@ export class HeaderComponent implements OnInit {
     if (this.isLanguageDropdownOpen) {
       this.closeLanguageDropdown();
     }
-    // Update header background based on scroll position
-    this.isScrolled = window.scrollY > 10;
+    // Update header background based on scroll position (browser only)
+    if (isPlatformBrowser(this.platformId)) {
+      this.isScrolled = window.scrollY > 10;
+    }
   }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
-    // Prevent body scroll when mobile menu is open
-    if (this.isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+    // Prevent body scroll when mobile menu is open (browser only)
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isMobileMenuOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
     }
   }
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
-    document.body.style.overflow = "";
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = "";
+    }
   }
 
   toggleLanguageDropdown(): void {
@@ -126,8 +147,12 @@ export class HeaderComponent implements OnInit {
     }
     this.selectedLanguage = language;
     this.translate.use(language.code);
-    localStorage.setItem("lang", language.code);
-    document.documentElement.dir = language.code === "ar" ? "rtl" : "ltr";
+    
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem("lang", language.code);
+      document.documentElement.dir = language.code === "ar" ? "rtl" : "ltr";
+    }
+    
     this.closeLanguageDropdown();
   }
 
@@ -135,10 +160,13 @@ export class HeaderComponent implements OnInit {
     if (event) {
       event.preventDefault();
     }
+    
     const performSmoothScroll = () => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (isPlatformBrowser(this.platformId)) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
     };
 
