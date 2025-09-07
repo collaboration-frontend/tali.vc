@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /i18n/
+Disallow: /assets/i18n/
+Allow: /
+Sitemap: https://tali.vc/sitemap.xml
