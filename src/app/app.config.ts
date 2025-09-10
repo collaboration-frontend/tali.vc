@@ -1,10 +1,14 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter, withHashLocation, withInMemoryScrolling } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateLoader, TranslateModule, TranslationObject } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
+import { ApplicationConfig, importProvidersFrom } from "@angular/core";
+import { provideRouter, withInMemoryScrolling } from "@angular/router";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslationObject,
+} from "@ngx-translate/core";
+import { Observable } from "rxjs";
 
-import { routes } from './app.routes';
+import { routes } from "./app.routes";
 
 class AssetTranslateLoader implements TranslateLoader {
   constructor(private httpClient: HttpClient) {}
@@ -23,22 +27,20 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withInMemoryScrolling({
-        scrollPositionRestoration: 'enabled',
-        anchorScrolling: 'enabled'
-      }) ,
-      //add hashing to the routes
-      withHashLocation()
+        scrollPositionRestoration: "enabled",
+        anchorScrolling: "enabled",
+      })
     ),
     importProvidersFrom(
       HttpClientModule,
       TranslateModule.forRoot({
-        defaultLanguage: 'en',
+        defaultLanguage: "en",
         loader: {
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-        }
+          deps: [HttpClient],
+        },
       })
-    )
-  ]
+    ),
+  ],
 };
