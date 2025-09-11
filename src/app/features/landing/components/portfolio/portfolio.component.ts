@@ -76,5 +76,46 @@ export class PortfolioComponent {
       imageUrl: "assets/icons/cohere.svg",
       website: "https://cohere.com",
     },
+    {
+      title: "COGNNA",
+      description: "portfolio.items.COGNNA.description",
+      sector: "investmentFocus.areas.cyberSecurity",
+      investmentYear: 2022,
+      imageUrl: "assets/images/Cognna_Logo.png",
+      website: "https://www.cognna.com/",
+    },
+    {
+      title: "Shaffra",
+      description: "portfolio.items.Shaffra.description",
+      sector: "investmentFocus.areas.ai",
+      investmentYear: 2022,
+      imageUrl: "assets/images/Shaffra.jpg",
+      website: "https://www.shaffra.com",
+    },
+    {
+      title: "Ertikaz",
+      description: "portfolio.items.Ertikaz.description",
+      sector: "investmentFocus.areas.logistics",
+      investmentYear: 2022,
+      imageUrl: "assets/images/Ertikaz_Solutions.png",
+      website: "https://www.ertikaz-tech.com/",
+    },
+    {
+      title: "Mod5r",
+      description: "portfolio.items.Mod5r.description",
+      sector: "investmentFocus.areas.fintech",
+      investmentYear: 2022,
+      imageUrl: "assets/images/Mod5r_logo.png",
+      website: "https://mod5r.com",
+    },
+    {
+      title: "Jalebi",
+      description: "portfolio.items.Jalebi.description",
+      sector: "investmentFocus.areas.cloud",
+      investmentYear: 2022,
+      imageUrl: "assets/images/Jalebi_Logo.jpg",
+      website: "https://jalebi.io/",
+    },
+    
   ];
 }

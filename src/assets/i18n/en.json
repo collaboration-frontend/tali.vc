@@ -100,7 +100,8 @@
       "propTech": "Prop Tech",
       "iot": "IoT",
       "blockchain": "BlockChain",
-      "network": "Network"
+      "network": "Network",
+      "logistics": "Logistics"
     },
     "cards": {
       "earlyStage": "Early-stage startup",
@@ -144,6 +145,21 @@
       },
       "tarmeez": {
         "description": "Tarmeez Capital is a Saudi fintech company, licensed by the Capital Market Authority, that provides innovative solutions for businesses to secure financing through Islamic sukuk issuance. It also offers investors easy access to Sharia-compliant investment opportunities through an intuitive digital experience."
+      },
+      "COGNNA": {
+        "description": "COGNNA empowers organizations with AI-driven cybersecurity; delivering autonomous threat detection, investigation, and response. By reducing alert noise, accelerating response times, and ensuring compliance, COGNNA keeps businesses secure, resilient, and ahead of evolving cyber threats."
+      },
+      "Shaffra":{
+        "description": "Shaffra is a technology company specializing in advanced digital transformation solutions through AI-powered virtual employees and scalable metaverse environments. Its platform enables organizations to build customized digital workforces that integrate seamlessly with existing systems enhancing operational efficiency, reducing costs, and boosting productivity—paving the way toward the future of smart digital workplaces."
+      },
+      "Ertikaz":{
+        "description": "Ertikaz Solutions is a Logistics FinTech company providing a unified digital platform to manage fleet operations, transport, and financial workflows. Through its cloud-based solutions, including Lean Dispatcher and Lean Finance, Ertikaz enables organizations to automate orders, trips, invoicing, and regulatory documents in seconds driving efficiency, transparency, and scalable growth across the logistics ecosystem."
+      },
+      "Mod5r":{
+        "description": "Mod5r is a digital financial platform licensed by the Saudi Central Bank (SAMA), designed to simplify expense management, budgeting, and payment tracking. It provides easy-to-use tools for personal financial management, combining convenience and control in one seamless experience."
+      },
+      "Jalebi":{
+        "description": "Jalebi is a cloud-based restaurant management platform that unifies Point of Sale (POS) and inventory management in one smart solution. It empowers restaurant owners to take full control of orders, sales, and stock instantly, helping reduce waste, improve operational efficiency, and increase profitability. With its intuitive design, built in collaboration with industry experts, the platform enables restaurants to focus on growth and deliver exceptional customer experiences."
       }
     }
   },
