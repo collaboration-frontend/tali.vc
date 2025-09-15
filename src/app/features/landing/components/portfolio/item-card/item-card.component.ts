@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -14,7 +15,8 @@ export interface PortfolioItem {
   selector: 'app-portfolio-item-card',
   standalone: true,
   imports: [
-    TranslateModule
+    TranslateModule,
+    CommonModule
   ],
   templateUrl: './item-card.component.html',
   styleUrls: ['./item-card.component.scss']
