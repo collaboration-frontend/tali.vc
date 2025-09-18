@@ -33,7 +33,7 @@ export class PortfolioComponent {
       description: "portfolio.items.nile.description",
       sector: "investmentFocus.areas.itServices",
       investmentYear: 2022,
-      imageUrl: "assets/images/nile.png",
+      imageUrl: "assets/images/nile-logo.png",
       website: "https://nilesecure.com",
     },
     {
@@ -105,7 +105,7 @@ export class PortfolioComponent {
       description: "portfolio.items.Mod5r.description",
       sector: "investmentFocus.areas.fintech",
       investmentYear: 2022,
-      imageUrl: "assets/images/aka.png",
+      imageUrl: "assets/images/Mod5r_logo.png",
       website: "https://mod5r.com",
     },
     {
