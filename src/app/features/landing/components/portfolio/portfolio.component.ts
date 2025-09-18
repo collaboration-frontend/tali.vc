@@ -33,7 +33,7 @@ export class PortfolioComponent {
       description: "portfolio.items.nile.description",
       sector: "investmentFocus.areas.itServices",
       investmentYear: 2022,
-      imageUrl: "assets/images/nile-logo.png",
+      imageUrl: "assets/images/nile.png",
       website: "https://nilesecure.com",
     },
     {
@@ -101,11 +101,11 @@ export class PortfolioComponent {
       website: "https://www.ertikaz-tech.com/",
     },
     {
-      title: "Mod5r",
+      title: "Akasia",
       description: "portfolio.items.Mod5r.description",
       sector: "investmentFocus.areas.fintech",
       investmentYear: 2022,
-      imageUrl: "assets/images/Mod5r_logo.png",
+      imageUrl: "assets/images/aka.png",
       website: "https://mod5r.com",
     },
     {
@@ -116,6 +116,5 @@ export class PortfolioComponent {
       imageUrl: "assets/images/Jalebi_Logo.jpg",
       website: "https://jalebi.io/",
     },
-    
   ];
 }
