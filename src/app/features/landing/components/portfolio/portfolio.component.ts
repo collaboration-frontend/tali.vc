@@ -106,7 +106,7 @@ export class PortfolioComponent {
       sector: "investmentFocus.areas.fintech",
       investmentYear: 2022,
       imageUrl: "assets/images/Mod5r_logo.png",
-      website: "https://mod5r.com",
+      website: "https://akasia.com/",
     },
     {
       title: "Jalebi",
